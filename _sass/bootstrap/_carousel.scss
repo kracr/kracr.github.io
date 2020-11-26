@@ -260,9 +260,18 @@
   .carousel-caption {
     left: 20%;
     right: 20%;
-    padding-bottom: 30px;
+   padding-bottom: 20px;
+  opacity:0;
+  transition:500ms ease-in-out;
+
   }
 
+.item:hover .carousel-caption{
+left: 20%;
+    right: 20%;
+   padding-bottom: 50px;
+  opacity:1;
+}
   // Move up the indicators
   .carousel-indicators {
     bottom: 20px;

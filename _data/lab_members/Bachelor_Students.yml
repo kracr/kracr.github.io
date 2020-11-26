@@ -1,5 +1,5 @@
 #- name:
-#  photo: rock.jpg
+#  photo: bio.jpg
 #  info:
 #  email:
 #  number_educ:
@@ -8,78 +8,58 @@
 #  education3:
 #  education4:
 
-- name: Monkia jain
-  photo: rock.jpg
-  info: PhD student
-  email: monikaja@iiitd.ac.in
-  number_educ: 0
-  education1:
-  
-- name: Gunjan Singh
-  photo: rock.jpg
-  info: PhD student
-  email: gunjans@iiitd.ac.in
-  number_educ: 0
-  education1:
-  
-- name: Aayush Jain
-  photo: rock.jpg
-  info: Masters student
-  email: sutapa18056@iiitd.ac.in
-  number_educ: 0
-  education1:
 
 - name: Meetakshi Setiya
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: meetakshi19253@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Gitansh Raj Satija
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: gitansh19241@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Sakshi Saini
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: sakshi17092@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Pragya Sethi
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: pragya18067@iiitd.ac.in
   number_educ: 0
   education1:
 
 - name: Raghav Rathi
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: raghav17083@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Kritika Venkatachalam
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: kritika17061@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Soumyadeep Paul
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: soumyadeep18104@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Priya Rajpurohit
-  photo: rock.jpg
+  photo: bio.jpg
   info: Bachelors student
   email: priya15073@iiitd.ac.in
   number_educ: 0

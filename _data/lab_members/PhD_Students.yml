@@ -1,0 +1,25 @@
+#- name:
+#  photo: bio.jpg
+#  info:
+#  email:
+#  number_educ:
+#  education1:
+#  education2:
+#  education3:
+#  education4:
+
+
+- name: <a style="color:purple;" href="https://gunjansingh1.github.io/">Gunjan Singh</a>
+  photo: gunjan.jpg
+  info: PhD student, IBM Research Fellow
+  email: gunjans@iiitd.ac.in
+  number_educ: 0
+  education1:
+
+- name: <a style="color:purple;" href="">Monika Jain</a>
+  photo: bio.jpg
+  info: PhD student, P.M Research Fellow
+  email: monikaja@iiitd.ac.in
+  number_educ: 0
+  education1:
+    

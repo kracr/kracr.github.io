@@ -271,3 +271,12 @@
 .panel-danger {
   @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }
+.panel > .panel-heading {
+    background-image: none;
+    background-color: white;
+    color: purple;
+border-color: 1px purple;
+
+font-weight:bold;
+
+}

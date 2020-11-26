@@ -1,12 +1,11 @@
+<div class="wellnew">
+<h4><b>News</b></h4>
 
-<div class="well">
-<h4>News</h4>
-
-{% for article in site.data.news limit:8 %}
-{{ article.date }}
-<p>{{ article.headline }}</p>
+{% for article in site.data.news.news_2020 limit:4 %}
+<i class='fa fa-bullhorn fa-fw' style='font-size:16px;color:purple'></i>
+{{article.headline }}<br><p><span style="color:purple;">Posted on {{ article.date }}</span></p>
 {% endfor %}
 
-<h4><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">See All News</a></h4>
+<h4><a style="color:purple;" href="{{ site.url }}{{ site.baseurl }}/allnews.html">more...</a></h4>
 
     </div>

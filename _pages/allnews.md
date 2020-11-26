@@ -8,7 +8,15 @@ permalink: /allnews.html
 
 # News
 
-{% for article in site.data.news %}
-<p>{{ article.date }} <br>
-<em>{{ article.headline }}</em></p>
+
+{% for article in site.data.news.news_2020 %}
+<em>{{ article.headline }}</em><br><span style="color:purple;">Posted on {{ article.date }}</span>
+{% endfor %}
+
+{% for article in site.data.news.news_2019 %}
+<em>{{ article.headline }}</em><br><span style="color:purple;">Posted on {{ article.date }}</span>
+{% endfor %}
+
+{% for article in site.data.news.news_2018 %}
+<em>{{ article.headline }}</em><br><span style="color:purple;">Posted on {{ article.date }}</span>
 {% endfor %}

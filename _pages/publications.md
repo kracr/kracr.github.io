@@ -9,54 +9,27 @@ permalink: /publications/
 
 # Publications
 
-## Highlights
+<h3 style="color:purple;"><b>2020</b></h3>
+{% for publi in site.data.publications.publications_2020 %}
 
-(For a full list see [below](#full-list))
-
-{% assign number_printed = 0 %}
-{% for publi in site.data.publist %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if publi.highlight == 1 %}
-
-{% if even_odd == 0 %}
-<div class="row">
-{% endif %}
-
-<div class="col-sm-6 clearfix">
- <div class="well">
-  <pubtit>{{ publi.title }}</pubtit>
-  <p>{{ publi.description }}</p>
-  <p><em>{{ publi.authors }}</em></p>
-  <p><strong><a href="{{ publi.link.url }}">{{ publi.link.display }}</a></strong></p>
-  <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
-  <p> {{ publi.news2 }}</p>
- </div>
-</div>
-
-{% assign number_printed = number_printed | plus: 1 %}
-
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-{% endif %}
-{% endfor %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-<p> &nbsp; </p>
-
-
-## Full List
-
-{% for publi in site.data.publist %}
-
-  {{ publi.title }} <br />
-  <em>{{ publi.authors }} </em><br /><a href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+  
+<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:purple;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
 
 {% endfor %}
 
+<h3 style="color:purple;"><b>2019</b></h3>
+{% for publi in site.data.publications.publications_2019 %}
+
+  
+<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:purple;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+
+{% endfor %}
+
+
+<h3 style="color:purple;"><b>2018</b></h3>
+{% for publi in site.data.publications.publications_2018 %}
+
+  
+<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:purple;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+
+{% endfor %}

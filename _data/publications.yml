@@ -1,0 +1,20 @@
+- title: <b>A Benchmark for OWL 2 DL Reasoners.</b>
+  image: PbSpub.png
+  description: Project description here>>
+  authors: Gunjan Singh, Sumit Bhatia, Raghava Mutharaju
+  link:
+    url: https://dblp.uni-trier.de/db/conf/comad/comad2020.html#SinghBM20
+    display: "COMAD/CODS 2020: 353"
+  highlight: 1
+  news2:
+
+
+- title: "<b>Cardinality Extraction from Text for Ontology Learning.</b>"
+  image: PbSpub.png
+  description: Project description here>>
+  authors: Monika Jain, Paramita Mirza, Raghava Mutharaju
+  link:
+    url: https://dblp.uni-trier.de/db/conf/comad/comad2020.html#JainMM20
+    display: "COMAD/CODS 2020: 354"
+  highlight: 1
+  news2:

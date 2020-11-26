@@ -6,8 +6,6 @@ sitemap: false
 permalink: /
 ---
 
-Background knowledge and the ability to draw appropriate inferences when required plays a central role in human decision making.
-
 
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" >
     <!-- Menu -->
@@ -21,18 +19,27 @@ Background knowledge and the ability to draw appropriate inferences when require
     <!-- Items -->
     <div class="carousel-inner" markdown="0">
 
-        <div class="item active">
+
+	<div class="item active">
             <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/k.jpg" alt="Slide 1" />
-        </div>
+	<div class="carousel-caption">
+          <p>description goes here........</p>
+        </div></div>
         <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/a.jpg" alt="Slide 1" />
-        </div>
+            <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/a.jpg" alt="Slide 1"  />
+        <div class="carousel-caption">
+          <p>description goes here........</p>
+        </div></div>
         <div class="item">
             <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/d.jpg" alt="Slide 1" />
-        </div>
+        <div class="carousel-caption">
+          <p>description goes here........</p>
+        </div></div>
         <div class="item">
             <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/g.jpg" alt="Slide 1" />
-        </div>
+        <div class="carousel-caption">
+          <p>description goes here........</p>
+        </div></div>
     </div>
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

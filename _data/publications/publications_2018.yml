@@ -1,0 +1,19 @@
+- title: "<b>Linked Data - Storing, Querying, and Reasoning.</b>"
+  image: STS_news.png
+  description: Project description here>>
+  authors: Sherif Sakr, Marcin Wylot, Raghava Mutharaju, Danh Le Phuoc, Irini Fundulaki
+  link:
+    url: 
+    display: Springer 2018, ISBN 978-3-319-73514-6, pp. 1-223
+  highlight: 1
+  news2:
+
+- title: "<b>A survey of large-scale reasoning on the Web of data.</b>"
+  image: PbSpub.png
+  description: Project description here>>
+  authors: Grigoris Antoniou, Sotiris Batsakis, Raghava Mutharaju, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, Zhangquan Zhou
+  link:
+    url: https://dblp.uni-trier.de/db/journals/ker/ker33.html#AntoniouBMPQTUZ18
+    display: "Knowl. Eng. Rev. 33: e21(2018)"
+  highlight: 1
+  news2:

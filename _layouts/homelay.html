@@ -2,11 +2,20 @@
 layout: default
 ---
 
-  <div id="homeid" class="col-sm-8">
-        <h1>Welcome to the KRaCR Lab</h1>
 
+
+  <div id="homeid">
+        <h1 style="color:#7c66ac;font-family:Calibri;">Welcome to the KRaCR Lab</h1>
+     <!--   <h1 style="color:purple;font-family:Arial;">Welcome to the KRaCR Lab</h1>
+       <h1 style="color:purple;font-family:courier;">Welcome to the KRaCR Lab</h1>
+    <h1 style="color:purple;font-family:verdana;">Welcome to the KRaCR Lab</h1> --!>
 	{{ content }}
   </div>
-  <div id="newsid" class="col-sm-4" >
+				<div class="spacer"></div>	
+				<div class="spacer"></div>	
+ <div id="newsid" class="col-sm-6" >
 	{% include news.html %}
+  </div>
+ <div id="publications" class="col-sm-6" >
+	{% include publications.html %}
   </div>

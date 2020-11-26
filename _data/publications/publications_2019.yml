@@ -1,0 +1,20 @@
+- title: "<b>ODPReco - A Tool to Recommend Ontology Design Patterns.</b>"
+  image: PbSpub.png
+  description: Project description here>>
+  authors: Maleeha Arif Yasvi, Raghava Mutharaju
+  link:
+    url: https://dblp.uni-trier.de/db/conf/semweb/wop2019.html#YasviM19
+    display: "WOP@ISWC 2019: 71-75"
+  highlight: 1
+  news2:
+
+- title: "Towards a Concurrent Approximate Description Logic Reasoner."
+  image: PbSpub.png
+  description: Project description here>>
+  authors: Raj Kamal Yadav, Gunjan Singh, Raghava Mutharaju, Sumit Bhatia
+  link:
+    url: https://dblp.uni-trier.de/db/conf/semweb/iswc2019p.html#YadavSMB19
+    display: "ISWC Satellites 2019: 145-148"
+  highlight: 1
+  news2:
+
