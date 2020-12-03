@@ -2,20 +2,28 @@
 layout: default
 ---
 
-
-
-  <div id="homeid">
-        <h1 style="color:#7c66ac;font-family:Calibri;">Welcome to the KRaCR Lab</h1>
-     <!--   <h1 style="color:purple;font-family:Arial;">Welcome to the KRaCR Lab</h1>
-       <h1 style="color:purple;font-family:courier;">Welcome to the KRaCR Lab</h1>
-    <h1 style="color:purple;font-family:verdana;">Welcome to the KRaCR Lab</h1> --!>
-	{{ content }}
-  </div>
-				<div class="spacer"></div>	
-				<div class="spacer"></div>	
- <div id="newsid" class="col-sm-6" >
+<div class="container-fluid">
+<div class="row" style="background-color:#5b4785;;border-radius: 10px;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:15px;box-shadow: 0px 5px 5px #5b4785;" >
+  	<div id="homeid" class="col-sm-9" style="background-color:#ffffff;border-radius:12px;padding-left:20px;padding-right:20px;box-shadow: 0px 5px 5px #5b4785;"  >
+<div class="row" style="background-color:#ffff;padding-top:20px;border-radius:10px;padding-bottom:20px;padding-left:20px;padding-right:20px;" >
+		<h4 style="margin-top:-10px;margin-bottom:10px;background-color:#ffffff;color:#5b4785;font-family:Calibri;">Welcome to the KRaCR Lab</h4>
+	
+		{{ content }}
+	</div>
+</div>       
+  <div id="tweets" class="col-sm-3" style="background-color:#5b4785;padding-left:10px;padding-right:10px;">
+<a class="twitter-timeline"   data-tweet-limit="2" href="https://twitter.com/GunjanS12" data-chrome="nofooter noborders"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>  
+	</div>	
+</div>	
+<p></p>
+	
+ <div id="newsid" class="col-sm-6"  style="padding:0px 20px 0px 20px;box-shadow: 0px 5px 5px #ffffff;">
 	{% include news.html %}
   </div>
- <div id="publications" class="col-sm-6" >
+ <div id="publications" class="col-sm-6" style="padding:0px 20px 0px 20px;box-shadow: 0px 5px 5px #ffffff;">
 	{% include publications.html %}
-  </div>
+  	
+	</div>
+	 
+</div>  

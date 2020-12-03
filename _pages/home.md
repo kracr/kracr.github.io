@@ -7,6 +7,7 @@ permalink: /
 ---
 
 
+<p></p><p style="text-align:justify;">At the Knowledgeable Computing and Reasoning (KRaCR; pronounced as cracker) Lab affiliated with the department of CSE at IIIT-Delhi, we investigate techniques to incorporate these features into the machine and improve its decision making. We work on all aspects of the Semantic Web and Knowledge Graphs, including ontology modelling, knowledge graphs, ontology reasoning, and their applications to different domains such as healthcare, air pollution, and robotics. </p>
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" >
     <!-- Menu -->
     <ol class="carousel-indicators">
@@ -51,5 +52,5 @@ permalink: /
   </a>
 </div>
 
-At the Knowledgeable Computing and Reasoning (KRaCR; pronounced as cracker) Lab affiliated with the department of CSE at IIIT-Delhi, we investigate techniques to incorporate these features into the machine and improve its decision making. We work on all aspects of the Semantic Web and Knowledge Graphs, including ontology modelling, knowledge graphs, ontology reasoning, and their applications to different domains such as healthcare, air pollution, and robotics.
+
 
