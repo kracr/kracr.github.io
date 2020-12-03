@@ -667,15 +667,16 @@
     font-size:1.5rem;
     font-weight: 500;
     max-height:50px;
-    z-index: 1;
+    z-index: 1;    
     padding: 5px 15px 5px 15px;
- 
 }
 
 .dropdown .dropdown-menu > li > a,
 .dropdown .dropdown-menu  > .active > a{
     color: #7c66ac;
     font-weight: 500;
+    font-size:1.5rem;
+
 }
 
 
@@ -684,7 +685,8 @@
 .navbar .navbar-nav > .active > a:hover,
 .navbar .navbar-nav > .active > a:focus {
      background-color:#fbeb04;
-    color: #7c66ac;
+     color: #7c66ac;
+   
 
 
 }
@@ -706,7 +708,7 @@ background-color:#7c66ac;
 
 .navbar-brand-new{
 max-height:50px;
-padding: 25px 0px 0px 0px;
+padding: 20px 0px 0px 0px;
 font-size:2rem;
 display: inline-block;
 background-color:#7c66ac;
