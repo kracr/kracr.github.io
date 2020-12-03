@@ -13,7 +13,7 @@ permalink: /publications/
 {% for publi in site.data.publications.publications_2020 %}
 
   
-<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:purple;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:#7c66ac;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
 
 {% endfor %}
 
@@ -21,7 +21,7 @@ permalink: /publications/
 {% for publi in site.data.publications.publications_2019 %}
 
   
-<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:purple;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:#7c66ac;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
 
 {% endfor %}
 
@@ -30,6 +30,6 @@ permalink: /publications/
 {% for publi in site.data.publications.publications_2018 %}
 
   
-<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:purple;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:#7c66ac;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
 
 {% endfor %}
