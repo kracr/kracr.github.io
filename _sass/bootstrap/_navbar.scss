@@ -664,7 +664,7 @@
 .navbar .navbar-nav > li > a,
 .navbar .navbar-nav > .active > a{
     color: white;
-    font-size:1.5rem;
+    font-size:1.7rem;
     font-weight: 500;
     max-height:50px;
     z-index: 1;    
@@ -675,7 +675,7 @@
 .dropdown .dropdown-menu  > .active > a{
     color: #7c66ac;
     font-weight: 500;
-    font-size:1.5rem;
+    font-size:1.7rem;
 
 }
 
@@ -699,8 +699,9 @@
 }
 
 .navbar-brand{
-height:80px;
+height:100px;
 padding: 0px;
+
 vertical-align: middle; 
 display: inline-block;
 background-color:#7c66ac;
@@ -708,7 +709,7 @@ background-color:#7c66ac;
 
 .navbar-brand-new{
 max-height:50px;
-padding: 20px 0px 0px 0px;
+padding: 25px 0px 0px 0px;
 font-size:2rem;
 display: inline-block;
 background-color:#7c66ac;
