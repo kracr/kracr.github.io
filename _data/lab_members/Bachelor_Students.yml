@@ -13,6 +13,7 @@
   photo: Meetakshi.jpeg
   info: Bachelors student
   email: meetakshi19253@iiitd.ac.in
+  research_interest: Machine Learning and Deep Learning, Biological application of Computer Sciences
   number_educ: 0
   education1:
 
@@ -20,6 +21,7 @@
   photo: Sakshi.jpeg
   info: Bachelors student
   email: sakshi17092@iiitd.ac.in
+  research_interest: Knowledge Represnation, Information Reterival.
   number_educ: 0
   education1:
 
@@ -27,6 +29,7 @@
   photo: Pritish.jpg
   info: Bachelors student
   email: pritish19440@iiitd.ac.in
+  research_interest: AI/ML, Augmented Reality, Operating Systems, Game Design and Development
   number_educ: 0
   education1:
 
@@ -34,6 +37,7 @@
   photo: Gitansh.JPG
   info: Bachelors student
   email: gitansh19241@iiitd.ac.in
+  research_interest: Multimedia Computing, Natural Language Processing, Interactive Product Design, AI/ML, Operating Systems 
   number_educ: 0
   education1:
   
@@ -41,20 +45,32 @@
   photo: Pragya.jpeg
   info: Bachelors student
   email: pragya18067@iiitd.ac.in
+  research_interest: NLP, Semantic web
   number_educ: 0
   education1:
+
 
 - name: Raghav Rathi
   photo: Raghav.jpg
   info: Bachelors student
   email: raghav17083@iiitd.ac.in
+  research_interest: Semantic Web, Backend (Java), ML, AI
   number_educ: 0
   education1:
-  
+
+- name: Dev Rajput
+  photo: Dev.jpeg
+  info: Bachelors student
+  email: dev19034@iiitd.ac.in
+  research_interest: Machine Learning, XR, Robotics
+  number_educ: 0
+  education1:
+
 - name: Kritika Venkatachalam
   photo: Kritika.jpg
   info: Bachelors student
   email: kritika17061@iiitd.ac.in
+  research_interest: Information Retrieval, Knowledge Graphs
   number_educ: 0
   education1:
   
@@ -62,6 +78,7 @@
   photo: Soumyadeep.jpg
   info: Bachelors student
   email: soumyadeep18104@iiitd.ac.in
+  research_interest: Web/Mobile technologies, Entrepreneurship
   number_educ: 0
   education1:
   
@@ -69,6 +86,7 @@
   photo: Mihir.jpg
   info: Bachelors student
   email: mihir17166@iiitd.ac.in
+  research_interest: Machine Learning, Deep Learning, Natural Language Processing, Semantic Web
   number_educ: 0
   education1:
 
@@ -76,6 +94,7 @@
   photo: Osheen.jpg
   info: Bachelors student
   email: osheen18059@iiitd.ac.in
+  research_interest: Exploring Knowledge Graphs and its applications in chatbots
   number_educ: 0
   education1:
 
@@ -84,6 +103,7 @@
   photo: Harsimar.jpg
   info: Bachelors student
   email: harsimar17290@iiitd.ac.in
+  research_interest: Object Oriented Programming
   number_educ: 0
   education1:
     
@@ -91,6 +111,7 @@
   photo: Aditya.jpg
   info: Bachelors student
   email: aditya18124@iiitd.ac.in
+  research_interest: Machine Learning and Deep Learning, Biological and Ayurvedic Sciences,Applied Mathematics
   number_educ: 0
   education1:
 

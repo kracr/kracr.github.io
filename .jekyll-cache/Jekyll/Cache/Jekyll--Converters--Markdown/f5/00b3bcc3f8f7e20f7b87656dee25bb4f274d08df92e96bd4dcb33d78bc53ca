@@ -1,0 +1,986 @@
+I"‚ç<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<p><button id="myBtn">Open Modal</button></p>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <p><!-- Modal content --></p>
+  <div class="modal-content">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="close"&gt;&amp;times;&lt;/span&gt;
+&lt;p&gt;Some text in the Modal..&lt;/p&gt;
+</code></pre></div>    </div>
+  </div>
+
+</div>
+<h1 id="group-members">Group Members</h1>
+
+<h3 id="faculty">Faculty</h3>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/raghavam.jpg" class="responsive" style="float: left" /></p>
+    <h4 style="color:purple;"><a style="color:purple;" href="http://raghavam.github.io/">Raghava Mutharaju</a></h4>
+    <p><i>Assistant Professor, started Sept 2018
+    <br /> 
+    <a style="color:purple">email: </a>
+    raghava.mutharaju@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Knowledge Graphs, Ontology Modeling &amp; Reasoning, Semantic Web Applications and Big Data
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<h3 id="ph-d-students">Ph. D Students</h3>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/gunjan.jpg" class="responsive" style="float: left" /></p>
+    <h4><a style="color:purple;" href="https://gunjansingh1.github.io/">Gunjan Singh</a></h4>
+    <p><i>PhD student, IBM Research Fellow
+    <br /> 
+    <a style="color:purple">email: </a>
+    gunjans@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Ontology Reasoning and Benchmarking, Reinforcement Learning, Machine Learning, Description Logics
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Monika.jpg" class="responsive" style="float: left" /></p>
+    <h4><a style="color:purple;" href="https://gunjansingh1.github.io/">Monika Jain</a></h4>
+    <p><i>PhD student, P.M Research Fellow
+    <br /> 
+    <a style="color:purple">email: </a>
+    monikaja@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Ontology learning, Knowledge graph, Natural language processing<br />
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<h3 id="masters-students">Masters Students</h3>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Karunakar.PNG" class="responsive" style="float: left" /></p>
+    <h4>Karunakar Chinnabathini</h4>
+    <p><i>Masters Student
+    <br /> 
+    <a style="color:purple">email: </a>
+    chinnabathini19008@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Robotics, AI/ML, sustainable energy development
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/anurag.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Anurag</h4>
+    <p><i>Masters Student
+    <br /> 
+    <a style="color:purple">email: </a>
+    anurag19006@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Linked Web Data, NLP
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Gourab.jpg" class="responsive" style="float: left" /></p>
+    <h4>Gourab Chanda</h4>
+    <p><i>Masters Student
+    <br /> 
+    <a style="color:purple">email: </a>
+    gourab19090@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    SPARQL to Cypher Converter
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Biswesh.jpg" class="responsive" style="float: left" /></p>
+    <h4>Biswesh Mohapatra</h4>
+    <p><i>Masters Student
+    <br /> 
+    <a style="color:purple">email: </a>
+    biswesh.mohapatra@iiitb.org<br /><a style="color:purple;">Research Interests: </a>
+    Natural Language Processing, Knowledge Graphs, Graph ML
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<h3 id="bachelors-students">Bachelors Students</h3>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Meetakshi.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Meetakshi Setiya</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    meetakshi19253@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Machine Learning and Deep Learning, Biological application of Computer Sciences
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Sakshi.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Sakshi Saini</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    sakshi17092@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Knowledge Represnation, Information Reterival.
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Pritish.jpg" class="responsive" style="float: left" /></p>
+    <h4>Pritish Wadhwa</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    pritish19440@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    AI/ML, Augmented Reality, Operating Systems, Game Design and Development
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Gitansh.JPG" class="responsive" style="float: left" /></p>
+    <h4>Gitansh Raj Satija</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    gitansh19241@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Multimedia Computing, Natural Language Processing, Interactive Product Design, AI/ML, Operating Systems
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Pragya.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Pragya Sethi</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    pragya18067@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    NLP, Semantic web
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Raghav.jpg" class="responsive" style="float: left" /></p>
+    <h4>Raghav Rathi</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    raghav17083@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Semantic Web, Backend (Java), ML, AI
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Dev.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Dev Rajput</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    dev19034@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Machine Learning, XR, Robotics
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Kritika.jpg" class="responsive" style="float: left" /></p>
+    <h4>Kritika Venkatachalam</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    kritika17061@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Information Retrieval, Knowledge Graphs
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Soumyadeep.jpg" class="responsive" style="float: left" /></p>
+    <h4>Soumyadeep Paul</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    soumyadeep18104@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Web/Mobile technologies, Entrepreneurship
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Mihir.jpg" class="responsive" style="float: left" /></p>
+    <h4>Mihir Goyal</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    mihir17166@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Machine Learning, Deep Learning, Natural Language Processing, Semantic Web
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Osheen.jpg" class="responsive" style="float: left" /></p>
+    <h4>Osheen Sachdev</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    osheen18059@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Exploring Knowledge Graphs and its applications in chatbots
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Harsimar.jpg" class="responsive" style="float: left" /></p>
+    <h4>Harsimar Singh</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    harsimar17290@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Object Oriented Programming
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Aditya.jpg" class="responsive" style="float: left" /></p>
+    <h4>Aditya Garg</h4>
+    <p><i>Bachelors student
+    <br /> 
+    <a style="color:purple">email: </a>
+    aditya18124@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Machine Learning and Deep Learning, Biological and Ayurvedic Sciences,Applied Mathematics
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<h3 id="research-assistants-interns">Research Assistants/ Interns</h3>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+    <p><img src="/images/teampic/Vandana.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Vandana Miglani</h4>
+    <p><i>Intern
+    <br /> 
+    <a style="color:purple">email: </a>
+    vandana.miglani.12@gmail.com<br /><a style="color:purple;">Research Interests: </a>
+    Semantic Web, Artificial Intelligence, Computer Vision
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+  </div>
+
+</div>
+
+<h3 id="alumni">Alumni</h3>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Vipul.jpg" class="responsive" style="float: left" /></p>
+    <h4>Vipul Saini</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    vipul16117@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Machine Learning
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Hrithik.jpg" class="responsive" style="float: left" /></p>
+    <h4>Hrithik Chopra</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    hrithik16237@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    AI, ML, NLP, Knowledge representation and reasoning
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Ahilya.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Ahilya Sinha</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    ahilyasinha99@gmail.com<br /><a style="color:purple;">Research Interests: </a>
+    Knowledge graphs, parallel programming
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Ashwat.jpg" class="responsive" style="float: left" /></p>
+    <h4>Ashwat</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    ashwat16023@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Semantic Web and Multimedia Systems
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Aayush.jpg" class="responsive" style="float: left" /></p>
+    <h4>Aayush Jain</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    aayush.jain95@gmail.com<br /><a style="color:purple;">Research Interests: </a>
+    NLP,CV
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Priya.jpg" class="responsive" style="float: left" /></p>
+    <h4>Priya Rajpurohit</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    priya15073@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Semantic Web, Deep Learning
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Kanav.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Kanav Bhagat</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    kanav16046@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Sementic Web, Machine Learning, NLP
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Sutapa.jpg" class="responsive" style="float: left" /></p>
+    <h4>Sutapa Mondal</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    sutapa18056@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Machine learning, data privacy
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Maleeha.jpeg" class="responsive" style="float: left" /></p>
+    <h4>Maleeha Arif Yasvi</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    maleeha18112@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Semantic Web, IOT, Software Analysis
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+  <div class="col-sm-6 clearfix">
+
+    <p><img src="/images/teampic/Pramit.png" class="responsive" style="float: left" /></p>
+    <h4>Pramit Bhattacharyya</h4>
+    <p><i>Alumnus
+    <br /> 
+    <a style="color:purple">email: </a>
+    pramit18142@iiitd.ac.in<br /><a style="color:purple;">Research Interests: </a>
+    Knowledge graph, Data Mining, Ontology Modelling and Sematic Web
+    <br /> 
+    <a style="padding-left: 2px;" href="https://github.com/kracr/" target="_blank" aria-label="GitHub"><i class="fab fa-github-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x" style="color:#5b4785;"></i></a> 
+    <a style="padding-left: 2px;" href="" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x" style="color:#5b4785;"></i></a>
+    <a style="padding-left: 2px;" href="mailto:kracr@iiitd.ac.in" target="_blank" aria-label="Mail"><i class="fas fa-envelope-square fa-2x" style="color:#5b4785;"></i></a>
+  </i></p>
+    <ul style="overflow: hidden">
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+:ET
