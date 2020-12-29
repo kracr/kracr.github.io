@@ -1,20 +1,22 @@
-- title: <b>A Benchmark for OWL 2 DL Reasoners.</b>
-  image: PbSpub.png
+- title: \"<b>A Benchmark for OWL 2 DL Reasoners</b>\"
+  image: http://localhost:4000/images/pdf/application-pdf.png
   description: Project description here>>
   authors: Gunjan Singh, Sumit Bhatia, Raghava Mutharaju
+  pdf: http://sumitbhatia.net/papers/iswc20.pdf
   link:
-    url: https://dblp.uni-trier.de/db/conf/comad/comad2020.html#SinghBM20
-    display: "COMAD/CODS 2020: 353"
+    url:
+    display: "COMAD CODS 2020: 353"
   highlight: 1
-  news2:
+  news2: in Proceedings of the 7th ACM IKDD CoDS and 25th COMAD (CoDS COMAD 2020) 
 
 
-- title: "<b>Cardinality Extraction from Text for Ontology Learning.</b>"
-  image: PbSpub.png
+- title: \"<b>Cardinality Extraction from Text for Ontology Learning</b>\"
+  image: http://localhost:4000/images/pdf/application-pdf.png
   description: Project description here>>
   authors: Monika Jain, Paramita Mirza, Raghava Mutharaju
+  pdf: https://dl.acm.org/doi/pdf/10.1145/3371158.3371223?casa_token=QDc4aWfLyP4AAAAA:8t7Ex0d8AQ0KJbuxlYkaBx17nc7QCno_s3ejAB4Z7nY6MOLfVBe3lCWL-Wdvud2AZatCdJLOA_AL0Q
   link:
-    url: https://dblp.uni-trier.de/db/conf/comad/comad2020.html#JainMM20
-    display: "COMAD/CODS 2020: 354"
+    url: 
+    display: "COMAD CODS 2020: 354"
   highlight: 1
-  news2:
+  news2: in Proceedings of the 7th ACM IKDD CoDS and 25th COMAD (CoDS COMAD 2020) 
