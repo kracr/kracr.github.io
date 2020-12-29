@@ -7,6 +7,11 @@
 #  education2:
 #  education3:
 #  education4:
-
+- name: Vandana Miglani
+  photo: Vandana.jpeg
+  info: Intern
+  email: vandana.miglani.12@gmail.com
+  number_educ: 0
+  education1:
 
 

@@ -7,11 +7,30 @@
 #  education2:
 #  education3:
 #  education4:
-
-
-- name: Aayush Jain
-  photo: bio.jpg
+- name: Karunakar Chinnabathini
+  photo: Karunakar.png
   info: Masters Student
-  email: sutapa18056@iiitd.ac.in
+  email: chinnabathini19008@iiitd.ac.in
+  number_educ: 0
+  education1:
+
+- name: Anurag
+  photo: anurag.jpeg
+  info: Masters Student
+  email: anurag19006@iiitd.ac.in
+  number_educ: 0
+  education1:
+
+- name: Gourab Chanda
+  photo: Gourab.jpg
+  info: Masters Student
+  email: gourab19090@iiitd.ac.in
+  number_educ: 0
+  education1:
+
+- name: Biswesh Mohapatra
+  photo: Biswesh.jpg
+  info: Masters Student
+  email: biswesh.mohapatra@iiitb.org
   number_educ: 0
   education1:

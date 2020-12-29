@@ -10,57 +10,87 @@
 
 
 - name: Meetakshi Setiya
-  photo: bio.jpg
+  photo: Meetakshi.jpeg
   info: Bachelors student
   email: meetakshi19253@iiitd.ac.in
   number_educ: 0
   education1:
-  
+
+- name: Sakshi Saini
+  photo: Sakshi.jpeg
+  info: Bachelors student
+  email: sakshi17092@iiitd.ac.in
+  number_educ: 0
+  education1:
+
+- name: Pritish Wadhwa
+  photo: Pritish.jpg
+  info: Bachelors student
+  email: pritish19440@iiitd.ac.in
+  number_educ: 0
+  education1:
+
 - name: Gitansh Raj Satija
-  photo: bio.jpg
+  photo: Gitansh.jpg
   info: Bachelors student
   email: gitansh19241@iiitd.ac.in
   number_educ: 0
   education1:
   
-- name: Sakshi Saini
-  photo: bio.jpg
-  info: Bachelors student
-  email: sakshi17092@iiitd.ac.in
-  number_educ: 0
-  education1:
-  
 - name: Pragya Sethi
-  photo: bio.jpg
+  photo: Pragya.jpeg
   info: Bachelors student
   email: pragya18067@iiitd.ac.in
   number_educ: 0
   education1:
 
 - name: Raghav Rathi
-  photo: bio.jpg
+  photo: Raghav.jpg
   info: Bachelors student
   email: raghav17083@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Kritika Venkatachalam
-  photo: bio.jpg
+  photo: Kritika.jpg
   info: Bachelors student
   email: kritika17061@iiitd.ac.in
   number_educ: 0
   education1:
   
 - name: Soumyadeep Paul
-  photo: bio.jpg
+  photo: Soumyadeep.jpg
   info: Bachelors student
   email: soumyadeep18104@iiitd.ac.in
   number_educ: 0
   education1:
   
-- name: Priya Rajpurohit
-  photo: bio.jpg
+- name: Mihir Goyal
+  photo: Mihir.jpg
   info: Bachelors student
-  email: priya15073@iiitd.ac.in
+  email: mihir17166@iiitd.ac.in
   number_educ: 0
   education1:
+
+- name: Osheen Sachdev
+  photo: Osheen.jpg
+  info: Bachelors student
+  email: osheen18059@iiitd.ac.in
+  number_educ: 0
+  education1:
+
+
+- name: Harsimar Singh
+  photo: Harsimar.jpg
+  info: Bachelors student
+  email: harsimar17290@iiitd.ac.in
+  number_educ: 0
+  education1:
+    
+- name: Aditya Garg
+  photo: Aditya.jpg
+  info: Bachelors student
+  email: aditya18124@iiitd.ac.in
+  number_educ: 0
+  education1:
+
