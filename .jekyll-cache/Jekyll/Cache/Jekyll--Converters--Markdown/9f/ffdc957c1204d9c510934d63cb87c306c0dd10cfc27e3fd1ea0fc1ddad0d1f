@@ -1,0 +1,45 @@
+I"�<h1 id="projects">Projects</h1>
+
+<p><button class="collapsible" id="1">Open Collapsible</button></p>
+<div class="content">
+  <p>XYZ……………………………………………………………………….
+XYZ………………………………………………………………………………..
+XYZ……………………………………………………………………………….</p>
+</div>
+
+<p><button class="collapsible">Open Section 1</button></p>
+<div class="content">
+  <p>XYZ</p>
+</div>
+
+<p><button class="collapsible">Open Section 2</button></p>
+<div class="content">
+  <p>XYZ</p>
+</div>
+
+<p><button class="collapsible">Open Section 3</button></p>
+<div class="content">
+  <p>XYZ</p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+
+:ET
