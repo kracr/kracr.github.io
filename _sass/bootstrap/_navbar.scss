@@ -675,7 +675,8 @@
 
 .dropdown .dropdown-menu > li > a,
 .dropdown .dropdown-menu  > .active > a{
-    color: #7c66ac;
+    color: white;
+background-color:#7d429d;
     font-weight: 500;
     font-size:1.7rem;
 
@@ -686,8 +687,8 @@
 .navbar .navbar-nav > li > a:focus,
 .navbar .navbar-nav > .active > a:hover,
 .navbar .navbar-nav > .active > a:focus {
-     background-color:#fbeb04;
-     color: #7c66ac;
+     background-color:#ffe6ff;
+     color: #7d429d;
    
 
 
@@ -696,29 +697,54 @@
  .dropdown .dropdown-menu > li > a:focus,
 .dropdown .dropdown-menu > .active > a:hover,
  .dropdown .dropdown-menu > .active > a:focus {
-     background-color:#fbeb04;
-    color: #7c66ac;
+     background-color:#ffe6ff;
+    color: #7d429d;
 }
 
 .navbar-brand{
-height:125px;
+height:135px;
 margin-top:-10px;
-margin-bottom:0px;
+margin-bottom:-5px;
 padding: 0px;
 vertical-align: middle; 
 display: inline-block;
-background-color:#7c66ac;
 
+@media screen and (min-width: 600px) and (max-width:700px) {
+      height:100px;
+  }
+@media screen and (min-width: 0px) and (max-width:600px) {
+      height:90px;
+  }
 }
 
 .navbar-brand-new{
 max-height:50px;
 padding: 15px 0px 0px 0px;
 font-size:3.3rem;
-color:#fffffb;
+color:#ffffff;
 display: inline-block;
-background-color:#7c66ac;
-  @media screen and (max-width: 400px) {
-      color: white;
+@media screen and (min-width: 800px) and (max-width:900px) {
+      font-size:2.5rem;
+  }
+  @media screen and (min-width: 600px) and (max-width:800px) {
+      font-size:2.2rem;
+  }
+@media screen and (min-width: 0px) and (max-width:600px) {
+      font-size:2rem;
+  }
+
+}
+.navbar-brand-new2{
+font-size:2.5rem;
+padding: 15px 0px 0px 0px;
+color:#fbeb04;
+@media screen and (min-width: 800px) and (max-width:900px) {
+      font-size:2.5rem;
+  }
+  @media screen and (min-width: 600px) and (max-width:800px) {
+      font-size:2rem;
+  }
+@media screen and (min-width: 0px) and (max-width:600px) {
+      font-size:1.5rem;
   }
 }
