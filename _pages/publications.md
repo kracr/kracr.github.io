@@ -8,28 +8,25 @@ permalink: /publications/
 
 
 # Publications
+<br />
 
-<h3 style="color:purple;"><b>2020</b></h3>
+
 {% for publi in site.data.publications.publications_2020 %}
 
-  
-<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:#7c66ac;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+{{ publi.authors }} {{ publi.title }} {{ publi.news2 }}  <a href="{{ publi.pdf }}">{{ publi.link.display }} <img src ="{{ publi.image }}"/></a>
 
 {% endfor %}
 
-<h3 style="color:purple;"><b>2019</b></h3>
+
 {% for publi in site.data.publications.publications_2019 %}
 
-  
-<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:#7c66ac;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+{{ publi.authors }} {{ publi.title }} {{ publi.news2 }}  <a href="{{ publi.pdf }}">{{ publi.link.display }} <img src ="{{ publi.image }}"/></a>
 
 {% endfor %}
 
 
-<h3 style="color:purple;"><b>2018</b></h3>
 {% for publi in site.data.publications.publications_2018 %}
 
-  
-<b>{{ publi.title }}</b> <br />  <em>{{ publi.authors }} </em> <br /><a style="color:#7c66ac;" href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+{{ publi.authors }} {{ publi.title }} {{ publi.news2 }}  <a href="{{ publi.pdf }}">{{ publi.link.display }} <img src ="{{ publi.image }}"/></a>
 
 {% endfor %}

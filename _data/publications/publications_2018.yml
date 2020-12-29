@@ -1,19 +1,22 @@
-- title: "<b>Linked Data - Storing, Querying, and Reasoning.</b>"
-  image: STS_news.png
+- title: \"<b>Linked Data - Storing, Querying, and Reasoning </b>\"
+  image: http://localhost:4000/images/pdf/application-pdf.png
   description: Project description here>>
   authors: Sherif Sakr, Marcin Wylot, Raghava Mutharaju, Danh Le Phuoc, Irini Fundulaki
+  pdf: https://b-ok.cc/book/3494861/fa66a9?dsource=recommend
   link:
     url: 
-    display: Springer 2018, ISBN 978-3-319-73514-6, pp. 1-223
+    display: "Springer International Publishing 2018: 1-223"
   highlight: 1
-  news2:
+  news2: in Proceedings of Journal of the Association for Information Science and Technology
 
-- title: "<b>A survey of large-scale reasoning on the Web of data.</b>"
-  image: PbSpub.png
+- title: \"<b> A survey of large-scale reasoning on the Web of data </b>\"
+  image: http://localhost:4000/images/pdf/application-pdf.png
   description: Project description here>>
   authors: Grigoris Antoniou, Sotiris Batsakis, Raghava Mutharaju, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, Zhangquan Zhou
+  pdf: https://pure.hud.ac.uk/ws/files/14185682/Survey_Main.pdf
   link:
-    url: https://dblp.uni-trier.de/db/journals/ker/ker33.html#AntoniouBMPQTUZ18
-    display: "Knowl. Eng. Rev. 33: e21(2018)"
+    url: 
+    display: "The Knowledge Engineering Review 2018: e21"
   highlight: 1
-  news2:
+  news2: in Proceedings of Journal of Knowledge Engineering Review
+
