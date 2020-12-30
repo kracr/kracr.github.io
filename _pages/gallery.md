@@ -6,7 +6,7 @@ permalink: /gallery/
 ---
 
 # Pictures
-<div class="row">
+<div class="row" style="display: flex; justify-content: center;">
 <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/j.jpg" class="image" width="90%">
 <div class="transit">
@@ -24,7 +24,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row" style="display: flex; justify-content: center;">
 <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/b.jpg" class="image" width="90%">
 <div class="transit">
@@ -42,7 +42,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row" style="display: flex; justify-content: center;">
 <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/l.jpg" class="image" width="90%">
 <div class="transit">
@@ -60,7 +60,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row" style="display: flex; justify-content: center;">
 <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/i.jpg" class="image" width="90%">
 <div class="transit">
