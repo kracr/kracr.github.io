@@ -7,7 +7,7 @@ permalink: /gallery/
 
 # Pictures
 <div class="row">
-<div class="col-sm-6 clearfix">
+<div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/j.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -15,7 +15,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-<div class="col-sm-6 clearfix">
+<div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/c.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -25,7 +25,7 @@ permalink: /gallery/
 </div>
 </div>
 <div class="row">
-<div class="col-sm-6 clearfix">
+<div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/b.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -33,7 +33,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-  <div class="col-sm-6 clearfix">
+  <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/e.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -43,7 +43,7 @@ permalink: /gallery/
 </div>
 </div>
 <div class="row">
-<div class="col-sm-6 clearfix">
+<div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/l.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -51,7 +51,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-  <div class="col-sm-6 clearfix">
+  <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/h.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -61,7 +61,7 @@ permalink: /gallery/
 </div>
 </div>
 <div class="row">
-<div class="col-sm-6 clearfix">
+<div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/i.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0">
@@ -69,7 +69,7 @@ permalink: /gallery/
 </div>
 </div>
 </div>
-  <div class="col-sm-6 clearfix">
+  <div class="col-sm-5 clearfix">
 <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/Gallery/f.jpg" class="image" width="90%">
 <div class="transit">
 <div class="text" markdown = "0"> 
