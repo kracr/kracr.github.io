@@ -114,7 +114,8 @@ firstp {
 }
 
 /*Gallery*/
-.image
+
+    .image
 	{
 		opacity: 1;
 		transition: .5s ease;
@@ -135,28 +136,28 @@ firstp {
 
 	.text
 	{
-  		color: black;
-  		font-size: 16px;
-  		padding: 16px 32px;
+		transform:translateY(100px);
+  		color: rgb(73, 66, 66);
+  		font-size: 12px;
+  		padding: auto auto;
 	}
 
-	.col-sm-5:hover {
+	.col-lg-6:hover {
    	transition: transform .7s;
     -ms-transform: scale(1.2);
   	-webkit-transform: scale(1.2);
   	transform: scale(1.2); 
   	text-align: center;
-
 	}
 
 
-	.col-sm-5:hover .image
+	.col-lg-6:hover .image
 	{
 		opacity: 0.3;
 	}
 
 
-	.col-sm-5:hover .transit
+	.col-lg-6:hover .transit
 	{
 		opacity: 1;
 	}
