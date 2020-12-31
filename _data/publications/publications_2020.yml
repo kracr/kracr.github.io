@@ -10,6 +10,30 @@
   news2: in Proceedings of the 7th ACM IKDD CoDS and 25th COMAD (CoDS COMAD 2020) 
 
 
+- title: \"<b>OWL2Bench- Towards a Customizable Benchmark for OWL 2 Reasoners</b>\"
+  image: http://localhost:4000/images/pdf/application-pdf.png
+  description: Project description here>>
+  authors: Gunjan Singh, Ashwat Kumar, Kanav Bhagat, Sumit Bhatia, Raghava Mutharaju
+  pdf: http://ceur-ws.org/Vol-2721/paper587.pdf
+  link:
+    url: 
+    display:
+  highlight: 1
+  news2: in International Semantic Web Conference (ISWC), Posters & Demos Track
+
+
+- title: \"<b>Owl2bench- A benchmark for owl 2 reasoners</b>\"
+  image: http://localhost:4000/images/pdf/application-pdf.png
+  description: Project description here>>
+  authors: Gunjan Singh, Sumit Bhatia, Raghava Mutharaju
+  pdf: https://link.springer.com/chapter/10.1007/978-3-030-62466-8_6
+  link:
+    url: 
+    display: ""
+  highlight: 1
+  news2: in International Semantic Web Conference Pages 81-96
+
+
 - title: \"<b>Cardinality Extraction from Text for Ontology Learning</b>\"
   image: http://localhost:4000/images/pdf/application-pdf.png
   description: Project description here>>
