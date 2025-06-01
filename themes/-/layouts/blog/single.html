@@ -1,0 +1,156 @@
+{{ define "main" }}
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10 bg-white dark:bg-gray-800 rounded-none p-6 animate-fade-in">
+          {{ $image:= .Params.image }}
+          {{ if $image }}
+            <div class="mb-10">
+              {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full") }}
+            </div>
+          {{ end }}
+          <h1 class="h2 mb-4 gradient-text font-bold hover:text-[#e77f25] dark:hover:text-[#d95e2d] transition-colors">
+            {{ .Title }}
+          </h1>
+          <ul class="mb-6 text-sm">
+            <li class="mr-4 inline-block">
+              <a href="{{ `/KRaCR-Lab/authors/` | relLangURL }}{{ .Params.Author | urlize | lower }}/" class="gradient-text hover:text-[#e77f25] dark:hover:text-[#d95e2d] transition-colors">
+                <i class="fa-regular fa-circle-user mr-2"></i>{{ .Params.author }}
+              </a>
+            </li>
+            {{ $categories:= .Params.categories }}
+            {{ if $categories }}
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2 gradient-icon"></i>
+                {{ range $i,$p:= $categories }}
+                  <a href="{{ `/KRaCR-Lab/categories/` | relLangURL }}{{ . | urlize | lower }}/" class="gradient-text hover:text-[#e77f25] dark:hover:text-[#d95e2d] transition-colors">
+                    {{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }},{{ end }}
+                  </a>
+                {{ end }}
+              </li>
+            {{ end }}
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2 gradient-icon"></i>
+              <span class="gradient-text">{{ time.Format ":date_long" .PublishDate }}</span>
+            </li>
+          </ul>
+          <div class="content mb-10 text-gray-700 dark:text-gray-200">
+            {{ .Content }}
+          </div>
+          <div class="row items-start justify-between">
+            {{ $tags:= .Params.tags }}
+            {{ if $tags }}
+              <div class="lg:col-6 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3 gradient-text font-medium">{{ T "tags" }} :</h5>
+                <ul>
+                  {{ range $i,$p:= $tags }}
+                    <li class="inline-block">
+                      <a
+                        class="gradient-text m-1 inline-block px-2 py-1 hover:text-[#e77f25] dark:hover:text-[#d95e2d] transition-colors"
+                        href="{{ `/KRaCR-Lab/tags/` | relLangURL }}{{ . | urlize | lower }}/">
+                        {{ . | humanize }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+            <div class="lg:col-6 flex items-center">
+              {{ partial "social-share" (dict "Context" . "Class" "share-icons lg:ml-auto" "Title" (T "share") "Whatsapp" false "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false) }}
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Related posts -->
+      {{ $related := .Site.RegularPages.Related . | first 10 }}
+      {{ $related = $related | shuffle | first 3 }}
+      {{ with $related }}
+        <div class="section pb-0 mt-12">
+          <h2 class="h3 mb-12 gradient-text font-bold">{{ T "related_posts" }}</h2>
+          <div class="row">
+            {{ range . }}
+              <div class="lg:col-4 md:col-6 mb-14">
+                {{ partial "components/blog-card" . }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <style>
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      display: inline-block;
+      font-weight: 600;
+      text-transform: capitalize;
+      letter-spacing: 0.5px;
+      color: #1F2937;
+      background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .dark .gradient-text {
+      color: #E5E7EB;
+      background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text:hover {
+      transform: scale(1.05);
+    }
+
+    /* Gradient Icon */
+    .gradient-icon {
+      display: inline-block;
+      background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .dark .gradient-icon {
+      background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Content Links */
+    .content a {
+      color: #1F2937;
+      background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: color 0.2s ease;
+    }
+
+    .dark .content a {
+      color: #E5E7EB;
+      background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content a:hover {
+      color: #e77f25;
+    }
+
+    .dark .content a:hover {
+      color: #d95e2d;
+    }
+  </style>
+{{ end }}

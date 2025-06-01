@@ -1,0 +1,84 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Team"
+url = "/team"
+weight = 2
+
+[[main]]
+name = "Publications"
+url = "/publications"
+weight = 3
+
+[[main]]
+name = "Projects"
+url = "/projects"
+weight = 4
+
+[[main]]
+name = "News"
+url = "/news"
+weight = 5
+
+[[main]]
+name = "Resources"
+url = "/resources"
+weight = 6
+
+# [[main]]
+# name = "Blogs"
+# url = "/blog"
+# weight = 5
+
+# [[main]]
+# name = "Projects"
+# url = "/projects"
+# weight = 7
+
+# [[main]]
+# parent = "Projects"
+# name = "Ontology Modelling and Enrichment"
+# url = "/projects"
+
+# [[main]]
+# parent = "Projects"
+# name = "Description Logic Reasoning"
+# url = "/contact"
+
+# [[main]]
+# parent = "Projects"
+# name = "Knowledge Graphs"
+# url = "/team"
+
+# [[main]]
+# parent = "Projects"
+# name = "SPARQL Querying"
+# url = "/categories"
+
+# [[main]]
+# parent = "Projects"
+# name = "Semantic Web Applications"
+# url = "/404"
+
+
+# footer menu
+# [[footer]]
+# name = "About"
+# url = "/about"
+# weight = 1
+
+# [[footer]]
+# name = "Elements"
+# url = "/elements"
+# weight = 2
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 1

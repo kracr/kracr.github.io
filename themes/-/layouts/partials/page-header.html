@@ -1,0 +1,11 @@
+<section>
+  <div class="container text-center">
+    <div class="bg-white dark:bg-darkmode-body rounded-2xl px-8 py-14 relative overflow-hidden">
+      <!-- Content -->
+      <div class="relative z-10">
+        <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
+        {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,135 @@
+{{ $paginator := .Paginator }}
+<!-- Number of links either side of the current page. -->
+{{ $adjacent_links := 2 }}
+<!-- $max_links = ($adjacent_links * 2) + 1 -->
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+<!-- $lower_limit = $adjacent_links + 1 -->
+{{ $lower_limit := (add $adjacent_links 1) }}
+<!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
+{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+<!-- If there's more than one page. -->
+{{ if gt $paginator.TotalPages 1 }}
+  <nav class="pagination flex items-center justify-center space-x-2 mt-6" aria-label="Pagination">
+    <!-- Previous page. -->
+    {{ if $paginator.HasPrev }}
+      <a class="page-link rounded-full p-2" href="{{ $paginator.Prev.URL }}" aria-label="Previous page">
+        <span class="sr-only">Previous</span>
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="24" width="24">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    {{ else }}
+      <span class="page-link text-gray-400 dark:text-gray-600 rounded-full p-2">
+        <span class="sr-only">Previous</span>
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="24" width="24">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+      </span>
+    {{ end }}
+
+    <!-- Page numbers -->
+    {{ range $paginator.Pagers }}
+      {{ $.Scratch.Set "page_number_flag" false }}
+      <!-- Advanced page numbers. -->
+      {{ if gt $paginator.TotalPages $max_links }}
+        <!-- Lower limit pages. -->
+        {{ if le $paginator.PageNumber $lower_limit }}
+          {{ if le .PageNumber $max_links }}
+            {{ $.Scratch.Set "page_number_flag" true }}
+          {{ end }}
+        <!-- Upper limit pages. -->
+        {{ else if ge $paginator.PageNumber $upper_limit }}
+          {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+            {{ $.Scratch.Set "page_number_flag" true }}
+          {{ end }}
+        <!-- Middle pages. -->
+        {{ else }}
+          {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+            {{ $.Scratch.Set "page_number_flag" true }}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ $.Scratch.Set "page_number_flag" true }}
+      {{ end }}
+      <!-- Output page numbers. -->
+      {{ if eq ($.Scratch.Get "page_number_flag") true }}
+        {{ if eq . $paginator }}
+          <span aria-current="page" class="page-link page-item active rounded-full w-8 h-8 flex items-center justify-center">
+            {{ .PageNumber }}
+          </span>
+        {{ else }}
+          <a href="{{ .URL }}" class="page-link rounded-full w-8 h-8 flex items-center justify-center" aria-label="Page {{ .PageNumber }}">
+            {{ .PageNumber }}
+          </a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <!-- Next page. -->
+    {{ if $paginator.HasNext }}
+      <a class="page-link rounded-full p-2" href="{{ $paginator.Next.URL }}" aria-label="Next page">
+        <span class="sr-only">Next</span>
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="24" width="24">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    {{ else }}
+      <span class="page-link text-gray-400 dark:text-gray-600 rounded-full p-2">
+        <span class="sr-only">Next</span>
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="24" width="24">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
+      </span>
+    {{ end }}
+  </nav>
+
+  <style>
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .page-item {
+      margin: 0 0.2rem;
+    }
+
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1F2937;
+      background-color: #F3F4F6;
+      transition: all 0.3s ease;
+    }
+
+    .dark .page-link {
+      color: #E5E7EB;
+      background-color: #374151;
+    }
+
+    .page-link:hover {
+      color: white;
+      background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+      transform: translateY(-2px);
+    }
+
+    .dark .page-link:hover {
+      background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+    }
+
+    .page-item.active .page-link {
+      color: white;
+      background: linear-gradient(to right, #e77f25, #FF5C57);
+    }
+
+    .dark .page-item.active .page-link {
+      background: linear-gradient(to right, #d95e2d, #e63934);
+    }
+  </style>
+{{ end }}

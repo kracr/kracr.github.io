@@ -1,0 +1,13 @@
+name = "KRaCR Lab"
+license = "MIT"
+description = "KRaCR tailwindcss Lab Website"
+
+[author]
+name = "Yash Singh"
+homepage = "https://www.linkedin.com/in/yash-singh-iiitd/"
+repo = "https://github.com/YSULTRA"
+
+[author2]
+author = "Yogesh Kumar"
+homepage = "https://www.linkedin.com/in/yogesh-kumar-906557263/"
+repo = "https://github.com/yogk2004"

@@ -1,0 +1,60 @@
+<!-- categories -->
+{{ if isset site.Taxonomies "categories" }}
+  {{ if not (eq (len site.Taxonomies.categories) 0) }}
+    <div class="mb-8">
+      <h5 class="mb-6 text-lg font-bold text-gray-900 dark:text-white">{{ T "categories" }}</h5>
+      <div class="category-widget bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md">
+        <ul class="space-y-3">
+          {{ range $name, $items := site.Taxonomies.categories }}
+            <li>
+              <a
+                class="category-link flex justify-between items-center text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white {{ if (and (eq $.Page.Kind `term`) (eq $.Page.Type `categories`) (eq $.Page.Title .Page.Title)) }} active {{ end }}"
+                href="{{ .Page.RelPermalink }}">
+                {{ .Page.Title | humanize }} <span class="text-xs text-gray-500 dark:text-gray-400">({{ len $items }})</span>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  {{ end }}
+{{ end }}
+
+<style>
+  .category-widget {
+    transition: all 0.3s ease;
+  }
+
+  .category-link {
+    display: flex;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .category-link:hover {
+    background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+    color: white !important;
+    transform: translateX(4px);
+  }
+
+  .dark .category-link:hover {
+    background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+  }
+
+  .category-link.active {
+    background: linear-gradient(to right, #e77f25, #FF5C57);
+    color: white !important;
+    font-weight: 600;
+  }
+
+  .dark .category-link.active {
+    background: linear-gradient(to right, #d95e2d, #e63934);
+  }
+
+  .category-link.active span {
+    color: white !important;
+  }
+</style>

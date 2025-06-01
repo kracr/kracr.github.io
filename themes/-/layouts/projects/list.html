@@ -1,0 +1,557 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <style>
+    /* Font stack */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Custom scrollbar styles */
+    .scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #D19A52, #F28C4E, #FF5C57);
+      border-radius: 12px;
+    }
+    .dark .scrollbar::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #b87532, #d95e2d, #e63934);
+    }
+
+    /* Line clamp for text */
+    .line-clamp-1 {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Card layout with enhanced hover effect */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 340px;
+      overflow: hidden;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      top: 0;
+      z-index: 10;
+    }
+    .dark .project-card {
+      background: #1E2838;
+      backdrop-filter: blur(10px);
+    }
+    .project-card:hover {
+      transform: translateY(-16px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25), 0 0 0 3px rgba(241, 140, 78, 0.4);
+      background: rgba(241, 140, 78, 0.05);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Content container */
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 16px;
+    }
+
+    /* Description container */
+    .description-container {
+      max-height: 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      contain: content;
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+    .dark .description-container {
+      color: #d1d5db;
+    }
+
+    /* Category badge */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: white;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      white-space: nowrap;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: fit-content;
+      background: linear-gradient(to right, #D19A52, #FF5C57);
+    }
+    .dark .category-badge {
+      background: linear-gradient(to right, #b87532, #e63934);
+    }
+    .category-badge:hover {
+      transform: scale(1.05);
+    }
+
+    /* GitHub button */
+    .github-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      color: #F28C4E;
+      font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .dark .github-button {
+      color: #d95e2d;
+    }
+    .github-button:hover {
+      color: #FF5C57;
+      transform: translateX(2px);
+    }
+    .dark .github-button:hover {
+      color: #e63934;
+    }
+
+    /* Gradient border */
+    .gradient-border {
+      height: 4px;
+      background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      flex-shrink: 0;
+    }
+    .dark .gradient-border {
+      background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+    }
+
+    /* Jump to Category card */
+    .jump-to-category-card {
+      transition: all 0.3s ease;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #F28C4E;
+    }
+    .dark .jump-to-category-card {
+      background: #1E2838;
+      backdrop-filter: blur(10px);
+      border-left: 4px solid #d95e2d;
+    }
+    .jump-to-category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .dark .jump-to-category-card:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Category button styles */
+    .category-btn {
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #e5e7eb;
+      color: #374151;
+    }
+    .dark .category-btn {
+      background: #374151;
+      color: #d1d5db;
+    }
+    .category-btn:hover {
+      background: linear-gradient(to right, #F28C4E, #FF5C57);
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .dark .category-btn:hover {
+      background: linear-gradient(to right, #d95e2d, #e63934);
+      color: #ffffff;
+    }
+    .category-btn.active {
+      background: linear-gradient(to right, #D19A52, #FF5C57) !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 1px solid #F28C4E;
+    }
+    .dark .category-btn.active {
+      background: linear-gradient(to right, #b87532, #e63934) !important;
+      color: #ffffff !important;
+      border: 1px solid #d95e2d;
+    }
+    .category-btn[data-category="ALL"] {
+      font-weight: 600;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+    .category-btn[data-category="ALL"]:hover {
+      background: linear-gradient(to right, #F28C4E, #FF5C57, #D19A52);
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+    .dark .category-btn[data-category="ALL"]:hover {
+      background: linear-gradient(to right, #d95e2d, #e63934, #b87532);
+    }
+
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    .timeline:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 0.25rem;
+      background: linear-gradient(to bottom, #D19A52, #F28C4E, #FF5C57);
+      left: 0.45rem;
+    }
+    .dark .timeline:before {
+      background: linear-gradient(to bottom, #b87532, #d95e2d, #e63934);
+    }
+    .year-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #F28C4E;
+      position: relative; /* Inline with year text */
+      margin-right: 1rem; /* Space between dot and text */
+      transform: translateY(4px); /* Align vertically with text */
+      transition: all 0.3s ease;
+    }
+    .dark .year-dot {
+      background: #d95e2d;
+    }
+    .year-header:hover .year-dot {
+      transform: scale(1.3) translateY(4px);
+      box-shadow: 0 0 8px rgba(241, 140, 78, 0.5);
+    }
+    .dark .year-header:hover .year-dot {
+      box-shadow: 0 0 8px rgba(217, 94, 45, 0.5);
+    }
+
+    /* Year section and header styles */
+    .year-section {
+      padding-bottom: 1.5rem;
+    }
+    .year-header {
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 640px) {
+      .year-header {
+        margin-bottom: 3rem;
+      }
+    }
+
+    /* Responsive styles */
+    @media (max-width: 639px) {
+      .content-container {
+        padding: 12px;
+      }
+      .description-container {
+        font-size: 0.8rem;
+        max-height: 100px;
+      }
+      .project-card {
+        height: 320px;
+      }
+      .timeline {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .timeline:before {
+        left: 0.35rem;
+      }
+      .category-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+      .category-btn[data-category="ALL"] {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+      }
+      .jump-to-category-card {
+        padding: 12px;
+      }
+      .year-dot {
+        width: 12px;
+        height: 12px;
+        margin-right: 0.75rem; /* Smaller spacing */
+        transform: translateY(4px);
+      }
+      .year-header:hover .year-dot {
+        transform: scale(1.3) translateY(4px);
+      }
+      .year-section {
+        padding-bottom: 1rem;
+      }
+      .year-header {
+        margin-bottom: 2rem;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .project-card {
+        height: 330px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .timeline {
+        padding-left: 3rem;
+      }
+      .timeline:before {
+        left: 0.95rem;
+      }
+    }
+  </style>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
+    <!-- Group projects by year -->
+    {{ $projects := sort $.Site.Data.projects "Year" "desc" }}
+    {{ $byYear := dict }}
+    {{ range $projects }}
+      {{ $yr := printf "%v" .Year }}
+      {{ $slice := index $byYear $yr | default (slice) }}
+      {{ $slice = $slice | append . }}
+      {{ $byYear = merge $byYear (dict $yr $slice) }}
+    {{ end }}
+
+    <!-- Get sorted years (descending) -->
+    {{ $years := slice }}
+    {{ range $y, $_ := $byYear }}
+      {{ $years = $years | append $y }}
+    {{ end }}
+    {{ $years = sort $years "value" "desc" }}
+    {{ $latestYear := index $years 0 }}
+    {{ $pastYears := slice }}
+    {{ range $i, $y := $years }}
+      {{ if ne $i 0 }}
+        {{ $pastYears = $pastYears | append $y }}
+      {{ end }}
+    {{ end }}
+
+    <!-- Jump to Category card -->
+    <div class="jump-to-category-card mb-8 sm:mb-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md">
+      <div class="p-4 sm:p-6">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-4">Jump to Category</h3>
+        <div class="flex flex-wrap gap-2 overflow-x-auto">
+          <button
+            class="category-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 active bg-amber-600 text-white dark:bg-amber-600 dark:text-white"
+            data-category="ALL"
+            aria-label="View all projects"
+          >
+            ALL
+          </button>
+          <button
+            class="category-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+            data-category="CURRENT"
+            aria-label="View current projects"
+          >
+            Current ({{ $latestYear }})
+          </button>
+          <button
+            class="category-btn px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-md transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+            data-category="PAST"
+            aria-label="View past projects"
+          >
+            Past
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Current Projects (Latest Year) -->
+    <div class="timeline relative mb-12 current-projects">
+      <div class="year-section" data-year="{{ $latestYear }}">
+        <div class="year-header flex items-center cursor-pointer" data-toggle="year-{{ $latestYear }}">
+          <div class="year-dot"></div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Current Projects ({{ $latestYear }})</h2>
+        </div>
+        <div class="project-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-year-content="{{ $latestYear }}">
+          {{ range $project := index $byYear $latestYear }}
+            <div class="project-card">
+              <div class="content-container">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $project.Title }}</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-1">By: {{ $project.Authors }}</p>
+                <span class="category-badge {{ with index (site.GetPage "/projects").Params.categories $project.Category }}{{ .color }}{{ else }}bg-gradient-to-r from-[#D19A52] to-[#FF5C57] dark:from-[#b87532] dark:to-[#e63934]{{ end }}">
+                  {{ $project.Category }}
+                </span>
+                <div class="description-container scrollbar pr-3" tabindex="0">
+                  {{ $project.Description }}
+                </div>
+                <div class="mt-auto h-6">
+                  {{ if $project.githubUrl }}
+                    <a href="{{ $project.githubUrl }}" target="_blank" rel="noopener noreferrer" class="github-button">
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.153-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.686-4.566 4.936.359.308.678.916.678 1.846 0 1.335-.012 2.415-.012 2.741 0 .267.18 .579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                      </svg>
+                      View on GitHub
+                    </a>
+                  {{ else }}
+                    <div class="h-6"></div>
+                  {{ end }}
+                </div>
+              </div>
+              <div class="gradient-border"></div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Past Projects (Other Years) -->
+    <div class="timeline relative past-projects">
+      {{ range $i, $year := $pastYears }}
+        <div class="year-section {{ if ne $i 0 }}hidden{{ end }}" data-year="{{ $year }}">
+          <div class="year-header flex items-center cursor-pointer" data-toggle="year-{{ $year }}">
+            <div class="year-dot"></div>
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Past Projects ({{ $year }})</h2>
+          </div>
+          <div class="project-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 {{ if ne $i 0 }}hidden{{ end }}" data-year-content="{{ $year }}">
+            {{ range $project := index $byYear $year }}
+              <div class="project-card">
+                <div class="content-container">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $project.Title }}</h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-1">By: {{ $project.Authors }}</p>
+                  <span class="category-badge {{ with index (site.GetPage "/projects").Params.categories $project.Category }}{{ .color }}{{ else }}bg-gradient-to-r from-[#D19A52] to-[#FF5C57] dark:from-[#b87532] dark:to-[#e63934]{{ end }}">
+                    {{ $project.Category }}
+                  </span>
+                  <div class="description-container scrollbar pr-3" tabindex="0">
+                    {{ $project.Description }}
+                  </div>
+                  <div class="mt-auto h-6">
+                    {{ if $project.githubUrl }}
+                      <a href="{{ $project.githubUrl }}" target="_blank" rel="noopener noreferrer" class="github-button">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.153-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.686-4.566 4.936.359.308.678.916.678 1.846 0 1.335-.012 2.415-.012 2.741 0 .267.18 .579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                        </svg>
+                        View on GitHub
+                      </a>
+                    {{ else }}
+                      <div class="h-6"></div>
+                    {{ end }}
+                  </div>
+                </div>
+                <div class="gradient-border"></div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      const currentProjects = document.querySelector('.current-projects');
+      const pastProjects = document.querySelector('.past-projects');
+      const yearHeaders = document.querySelectorAll('.year-header');
+      const yearSections = document.querySelectorAll('.year-section');
+
+      // Show a specific category or all
+      const showCategory = (category) => {
+        console.log(`Showing category: ${category}`);
+        categoryButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-amber-600', 'text-white', 'dark:bg-amber-600', 'dark:text-white');
+          btn.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          if (btn.dataset.category === category) {
+            btn.classList.add('active', 'bg-amber-600', 'text-white', 'dark:bg-amber-600', 'dark:text-white');
+          }
+        });
+
+        if (category === 'ALL') {
+          currentProjects.classList.remove('hidden');
+          pastProjects.classList.remove('hidden');
+          yearSections.forEach(section => {
+            section.classList.remove('hidden');
+            const content = section.querySelector('.project-items');
+            if (content) content.classList.remove('hidden');
+            const header = section.querySelector('.year-header h2');
+            if (header) header.classList.add('text-amber-600', 'dark:text-amber-400');
+          });
+        } else if (category === 'CURRENT') {
+          currentProjects.classList.remove('hidden');
+          pastProjects.classList.add('hidden');
+          yearSections.forEach(section => {
+            if (section.dataset.year === '{{ $latestYear }}') {
+              section.classList.remove('hidden');
+              const content = section.querySelector('.project-items');
+              if (content) content.classList.remove('hidden');
+              const header = section.querySelector('.year-header h2');
+              if (header) header.classList.add('text-amber-600', 'dark:text-amber-400');
+            } else {
+              section.classList.add('hidden');
+            }
+          });
+        } else if (category === 'PAST') {
+          currentProjects.classList.add('hidden');
+          pastProjects.classList.remove('hidden');
+          yearSections.forEach(section => {
+            if (section.dataset.year !== '{{ $latestYear }}') {
+              section.classList.remove('hidden');
+              const content = section.querySelector('.project-items');
+              if (content) content.classList.remove('hidden');
+              const header = section.querySelector('.year-header h2');
+              if (header) header.classList.add('text-amber-600', 'dark:text-amber-400');
+            } else {
+              section.classList.add('hidden');
+            }
+          });
+        }
+      };
+
+      // Initialize with ALL
+      console.log(`Initializing with ALL`);
+      showCategory('ALL');
+
+      // Category button click handler
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.dataset.category;
+          console.log(`Button clicked for category: ${category}`);
+          showCategory(category);
+        });
+
+        button.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === 'Space') {
+            e.preventDefault();
+            console.log(`Keyboard trigger for category: ${button.dataset.category}`);
+            button.click();
+          }
+        });
+      });
+
+      // Year header toggle
+      yearHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const year = header.dataset.toggle.split('-')[1];
+          console.log(`Toggling year header: ${year}`);
+          const content = document.querySelector(`.project-items[data-year-content="${year}"]`);
+          if (content) {
+            content.classList.toggle('hidden');
+            const h2 = header.querySelector('h2');
+            if (h2) h2.classList.toggle('text-amber-600', !content.classList.contains('hidden'));
+            if (h2) h2.classList.toggle('dark:text-amber-400', !content.classList.contains('hidden'));
+          }
+        });
+      });
+    });
+  </script>
+{{ end }}

@@ -1,0 +1,221 @@
+<div class="blog-card bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition-all duration-300 overflow-visible flex flex-col min-h-[420px] max-h-[420px]">
+  <!-- Featured Image -->
+  {{ $image:= .Params.image }}
+  {{ if $image }}
+    <div class="blog-card-image overflow-hidden">
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full h-40 object-cover transition-transform duration-500 hover:scale-105") }}
+    </div>
+  {{ else }}
+    <div class="w-full h-40 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+      <span class="text-gray-500 dark:text-gray-400 text-sm">No Image</span>
+    </div>
+  {{ end }}
+
+  <!-- Content -->
+  <div class="p-4 flex flex-col flex-grow">
+    <!-- Categories -->
+    {{ with .Params.categories }}
+    <div class="mb-2 flex flex-wrap gap-1.5">
+      {{ range . }}
+      <a href="{{ "/KRaCR-Lab/categories/" | relLangURL }}{{ . | urlize | lower }}/" class="category-badge" aria-label="Category: {{ . }}">{{ . | humanize }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Tags -->
+    {{ with .Params.tags }}
+    <div class="mb-2 flex flex-wrap gap-1.5">
+      {{ range . }}
+      <a href="{{ "/KRaCR-Lab/tags/" | relLangURL }}{{ . | urlize | lower }}/" class="tag-badge" aria-label="Tag: {{ . }}">{{ . | humanize }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Title -->
+    <h4 class="mb-2 text-lg font-bold text-gray-900 dark:text-white hover:text-[#e77f25] dark:hover:text-[#d95e2d] transition-colors line-clamp-2">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h4>
+
+    <!-- Meta -->
+    <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-2">
+      {{ with .Params.author }}
+      <span class="flex items-center mr-3">
+        <i class="fa-regular fa-circle-user mr-1"></i>
+        <a href="{{ `/authors/` | relLangURL }}{{ . | urlize | lower }}/" aria-label="Author: {{ . }}">{{ . }}</a>
+      </span>
+      {{ end }}
+      <span class="flex items-center">
+        <i class="fa-regular fa-clock mr-1"></i>
+        {{ .ReadingTime }} min read
+      </span>
+    </div>
+
+    <!-- Excerpt -->
+    {{ $maxLength := 100 }}
+    {{ $summary := .Summary | plainify }}
+    <p class="mb-3 text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+      {{ if gt (len $summary) $maxLength }}
+        {{ substr $summary 0 $maxLength }}...
+      {{ else }}
+        {{ $summary }}
+      {{ end }}
+    </p>
+
+    <!-- Read More Button -->
+    <a class="btn btn-primary btn-sm inline-flex items-center justify-center mt-auto w-fit" href="{{ .RelPermalink }}">
+      {{ T "read_more" }}
+      <i class="fa-solid fa-arrow-right ml-1.5"></i>
+    </a>
+  </div>
+
+  <!-- Gradient Border -->
+  <div class="gradient-border h-3 w-full"></div>
+</div>
+
+<style>
+  /* Blog Card Styles */
+  .blog-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: visible;
+    border-radius: 0; /* Removed curved edges */
+  }
+
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(241, 140, 78, 0.2);
+  }
+
+  /* Category Badge */
+  .category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .dark .category-badge {
+    background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+  }
+
+  .category-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Tag Badge */
+  .tag-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #1F2937;
+    background-color: #F3F4F6;
+    border-radius: 9999px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .dark .tag-badge {
+    color: #E5E7EB;
+    background-color: #374151;
+  }
+
+  .tag-badge:hover {
+    transform: scale(1.05);
+    background-color: #e77f25;
+    color: white;
+  }
+
+  .dark .tag-badge:hover {
+    background-color: #d95e2d;
+  }
+
+  /* Gradient Border */
+  .gradient-border {
+    position: relative;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, #D19A52, #F28C4E, #FF5C57);
+    z-index: 1;
+    min-height: 3px;
+    border-radius: 0; /* Removed curved edges */
+  }
+
+  .dark .gradient-border {
+    background: linear-gradient(to right, #b87532, #d95e2d, #e63934);
+  }
+
+  /* Read More Button */
+  .btn.btn-primary {
+    background-color: #e77f25;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    font-size: 0.75rem;
+    max-width: 120px;
+  }
+
+  .dark .btn.btn-primary {
+    background-color: #d95e2d;
+  }
+
+  .btn.btn-primary:hover {
+    background-color: #FF5C57;
+    transform: translateY(-1px);
+  }
+
+  .dark .btn.btn-primary:hover {
+    background-color: #e63934;
+  }
+
+  /* Line clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .blog-card {
+      min-height: 380px;
+      max-height: 380px;
+    }
+
+    .blog-card-image,
+    .blog-card-image img {
+      height: 160px;
+    }
+
+    .category-badge,
+    .tag-badge {
+      font-size: 0.6rem;
+      padding: 2px 8px;
+    }
+
+    .btn.btn-primary {
+      padding: 4px 8px;
+      font-size: 0.7rem;
+      max-width: 110px;
+    }
+  }
+</style>

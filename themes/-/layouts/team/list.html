@@ -1,0 +1,383 @@
+{{ define "main" }}
+  <!-- Wrapper to hold the grid background -->
+  <div class="template-wrapper">
+    {{ partial "page-header" . }}
+
+    <style>
+      /* Modern typography */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        background: #ffffff;
+      }
+      .dark body {
+        background: #1c1c1c;
+      }
+
+      /* Container styling */
+      .section {
+        padding: 2rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Team section */
+      .team-section {
+        scroll-margin-top: 80px;
+        padding-top: 1rem;
+      }
+
+      /* Quick-scroll sidebar */
+      .quick-nav {
+        position: fixed;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        z-index: 1000;
+        max-height: calc(100vh - 100px); /* Prevent nav from extending too far */
+        overflow-y: auto; /* Allow scrolling if nav is too tall */
+      }
+      .quick-nav.absolute {
+        position: absolute;
+        top: auto;
+        bottom: 1.5rem;
+        transform: none;
+      }
+      .quick-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(to right, #B0743F, #E77F25, #FF5C57);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+        position: relative;
+        white-space: nowrap;
+        min-width: 100px;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(20px);
+        animation: fadeInRight 0.6s ease-out forwards;
+      }
+      .quick-nav a:nth-child(1) { animation-delay: 0.1s; }
+      .quick-nav a:nth-child(2) { animation-delay: 0.2s; }
+      .quick-nav a:nth-child(3) { animation-delay: 0.3s; }
+      .quick-nav a:nth-child(4) { animation-delay: 0.4s; }
+      .quick-nav a:nth-child(5) { animation-delay: 0.5s; }
+      .quick-nav a:nth-child(6) { animation-delay: 0.6s; }
+      .quick-nav a:hover {
+        transform: scale(1.05);
+      }
+      .quick-nav a:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+      }
+
+      /* Tooltip */
+      .quick-nav a::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: 110%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #1e293b;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        pointer-events: none;
+      }
+      .dark .quick-nav a::after {
+        background: #475569;
+      }
+      .quick-nav a:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Quick-nav animation */
+      @keyframes fadeInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .quick-nav {
+          right: 1rem;
+          gap: 0.5rem;
+        }
+        .quick-nav a {
+          padding: 0.5rem 0.75rem;
+          min-width: 90px;
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .quick-nav {
+          position: fixed;
+          top: auto;
+          bottom: 1.5rem; /* Base bottom spacing */
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 0.75rem;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(8px);
+          border-radius: 16px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          display: flex;
+          flex-direction: row; /* Horizontal layout */
+          gap: 0.5rem;
+          overflow-x: auto;
+          overflow-y: hidden; /* Prevent vertical scrolling */
+          overscroll-behavior-x: contain;
+          scroll-snap-type: x proximity; /* Smooth snapping for scrolling */
+          white-space: nowrap;
+          max-width: 90%;
+          min-height: 48px;
+          align-items: center;
+          z-index: 1000;
+        }
+        .dark .quick-nav {
+          background: rgba(31, 41, 55, 0.95);
+          backdrop-filter: blur(8px);
+        }
+        .quick-nav.absolute {
+          position: absolute;
+          bottom: auto;
+          top: auto;
+          transform: translateX(-50%);
+        }
+        .quick-nav a {
+          padding: 0.6rem 1rem;
+          min-width: 80px;
+          font-size: 0.85rem;
+          border-radius: 12px;
+          touch-action: manipulation;
+          scroll-snap-align: center; /* Center items when scrolling */
+        }
+        .quick-nav a::after {
+          right: auto;
+          bottom: 120%;
+          top: auto;
+          transform: translateX(-50%);
+          left: 50%;
+          margin-bottom: 0.75rem;
+          padding: 0.4rem 0.8rem;
+          font-size: 0.7rem;
+          border-radius: 4px;
+        }
+        .team-section {
+          scroll-margin-top: 60px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .quick-nav {
+          padding: 0.5rem;
+          max-width: 95%;
+          min-height: 44px;
+          border-radius: 14px;
+        }
+        .quick-nav a {
+          padding: 0.5rem 0.8rem;
+          min-width: 70px;
+          font-size: 0.8rem;
+        }
+        .quick-nav a::after {
+          padding: 0.3rem 0.6rem;
+          font-size: 0.65rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      /* Gradient line for headers */
+      .header-divider {
+        height: 4px;
+        background: linear-gradient(to right,#B0743F, #E77F25, #FF5C57);
+        border-radius: 2px;
+        margin: 0 auto 2rem;
+        width: 100%;
+        max-width: 1200px;
+      }
+    </style>
+
+    <section class="section">
+      <div class="container">
+        <!-- Quick-Scroll Sidebar Navigation -->
+        <nav class="quick-nav" role="navigation" aria-label="Team category quick navigation">
+          {{ $order := slice "Faculty" "PhD" "MTech" "BTech" "Collaborator" "Alumni" }}
+          {{ range $pos := $order }}
+            {{ $group := where site.Data.teams "Position" $pos }}
+            {{ if gt (len $group) 0 }}
+              <a href="#{{ $pos | lower }}"
+                 data-target="{{ $pos | lower }}"
+                 data-tooltip="{{ $pos }}"
+                 aria-label="Scroll to {{ $pos }} team members">
+                {{ $pos }}
+              </a>
+            {{ end }}
+          {{ end }}
+        </nav>
+
+        <!-- Team Sections -->
+        {{ $order := slice "Faculty" "PhD" "MTech" "BTech" "Collaborator" "Alumni" }}
+        {{ $teams := site.Data.teams }}
+
+        {{ range $pos := $order }}
+          {{ $group := where $teams "Position" $pos }}
+          {{ if gt (len $group) 0 }}
+            <section class="team-section" id="{{ $pos | lower }}" aria-labelledby="{{ $pos | lower }}-heading">
+              <!-- Position Heading -->
+              <h2 id="{{ $pos | lower }}-heading" class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B0743F] via-[#E77F25] to-[#FF5C57]">
+                  {{ $pos }}
+                </span>
+              </h2>
+              <!-- Gradient divider -->
+              <div class="header-divider"></div>
+
+              <!-- Team cards grid -->
+              <div class="row">
+                {{ range $group }}
+                  <div class="md:col-6 lg:col-4 mb-14">
+                    {{ partial "components/team-card" . }}
+                  </div>
+                {{ end }}
+              </div>
+            </section>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.quick-nav a');
+      const quickNav = document.querySelector('.quick-nav');
+      const templateWrapper = document.querySelector('.template-wrapper');
+      const footer = document.querySelector('.page-footer') || document.querySelector('footer');
+      const alumniSection = document.querySelector('#alumni');
+      let footerHeight = footer ? footer.offsetHeight : 0;
+      let alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : 0;
+
+      // Smooth scroll to section heading
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-target');
+          const targetHeading = document.getElementById(`${targetId}-heading`);
+
+          if (targetHeading) {
+            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+            const scrollOffset = header.offsetHeight + 20;
+            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+
+            history.pushState(null, null, `#${targetId}`);
+          }
+        });
+      });
+
+      // Handle initial hash in URL
+      if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetHeading = document.getElementById(`${targetId}-heading`);
+        if (targetHeading) {
+          setTimeout(() => {
+            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+            const scrollOffset = header.offsetHeight + 20;
+            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'auto'
+            });
+          }, 50);
+        }
+      }
+
+      // Adjust quick-nav position to avoid overlapping footer or stick after Alumni section
+      function adjustQuickNavPosition() {
+        if (!quickNav || !templateWrapper) return;
+
+        const wrapperRect = templateWrapper.getBoundingClientRect();
+        const navRect = quickNav.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const buffer = 20; /* Space above footer or Alumni section */
+        let stopPoint;
+
+        /* Update footer height and Alumni section bottom */
+        footerHeight = footer ? footer.offsetHeight : 0;
+        alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : wrapperRect.bottom + window.pageYOffset;
+
+        /* Use the higher of the footer top or Alumni section bottom */
+        const footerTop = footer ? footer.getBoundingClientRect().top + window.pageYOffset : Infinity;
+        stopPoint = Math.min(footerTop, alumniBottom) - navRect.height - buffer;
+
+        if (window.innerWidth <= 768) {
+          /* Mobile view */
+          if (window.pageYOffset + viewportHeight > stopPoint + navRect.height + buffer) {
+            quickNav.classList.add('absolute');
+            quickNav.style.top = `${stopPoint - wrapperRect.top}px`;
+            quickNav.style.bottom = 'auto';
+          } else {
+            quickNav.classList.remove('absolute');
+            quickNav.style.top = 'auto';
+            quickNav.style.bottom = '1.5rem';
+          }
+        } else {
+          /* Desktop view */
+          if (footer && window.pageYOffset + viewportHeight > footerTop + buffer) {
+            quickNav.classList.add('absolute');
+            quickNav.style.bottom = `${wrapperRect.bottom + window.pageYOffset - stopPoint + buffer}px`;
+            quickNav.style.top = 'auto';
+          } else {
+            quickNav.classList.remove('absolute');
+            quickNav.style.bottom = 'auto';
+            quickNav.style.top = '50%';
+          }
+        }
+      }
+
+      /* Update footer height and Alumni bottom on resize */
+      window.addEventListener('resize', () => {
+        footerHeight = footer ? footer.offsetHeight : 0;
+        alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : 0;
+        adjustQuickNavPosition();
+      });
+
+      /* Update position on scroll */
+      window.addEventListener('scroll', adjustQuickNavPosition);
+
+      /* Initial adjustment */
+      adjustQuickNavPosition();
+    });
+  </script>
+{{ end }}
