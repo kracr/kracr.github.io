@@ -18,8 +18,8 @@ yarn.lock
 resources
 
 # …but do track these two
-!themes/KRaCR-Lab/layouts/resources/
-!themes/KRaCR-Lab/layouts/resources/**
+!themes/kracr.github.io/layouts/resources/
+!themes/kracr.github.io/layouts/resources/**
 
 !content/English/resources/
 !content/English/resources/**

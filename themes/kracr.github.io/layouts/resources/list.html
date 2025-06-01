@@ -1,0 +1,111 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section py-16 relative">
+    <div class="container relative z-10">
+      {{ $page := . }}
+
+      {{ range $category, $links := $page.Params.resources }}
+        {{ if $links }}
+          <div class="mb-16">
+            <!-- Category header -->
+            <div class="flex justify-between items-center mb-8">
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-left relative inline-block">
+                {{ title $category }}
+                <!-- Static gradient line below title -->
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#D19A52] via-[#F28C4E] to-[#FF5C57] dark:from-[#b87532] dark:via-[#d95e2d] dark:to-[#e63934] rounded-full"></span>
+              </h2>
+            </div>
+
+            <!-- Links grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {{ range $index, $link := $links }}
+                {{ $domain := replaceRE "^https?://(?:www\\.)?([^/]+).*" "$1" .url }}
+
+                <a
+                  href="{{ .url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-md border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+                >
+                  <!-- Title and URL -->
+                  <div class="flex-1 p-6">
+                    <div class="mb-4">
+                      <span class="text-lg md:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-[#D19A52] dark:group-hover:text-[#D19A52] transition-colors duration-300 line-clamp-2">
+                        {{ .title }}
+                      </span>
+                    </div>
+
+                    <!-- URL -->
+                    <div class="mt-auto">
+                      <p class="text-sm text-gray-500 dark:text-gray-400 truncate mb-2">
+                        {{ $domain }}
+                      </p>
+                      <div class="flex items-center text-blue-600 dark:text-blue-400 group-hover:text-purple-500 transition-colors duration-300">
+                        <span class="text-sm font-medium">Visit Resource</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gradient line at the bottom -->
+                  <div class="h-1 w-full bg-gradient-to-r from-[#D19A52] via-[#F28C4E] to-[#FF5C57] dark:from-[#b87532] dark:via-[#d95e2d] dark:to-[#e63934] rounded-b-2xl"></div>
+
+                  <!-- Gradient border effect on hover -->
+                  <div class="absolute inset-0 rounded-2xl pointer-events-none border-2 border-transparent group-hover:border-gradient-to-r group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-500"></div>
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // No animation or Vanta.js logic required
+    });
+  </script>
+
+  <style>
+    /* Modern font stack */
+    .section {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Line clamp for text */
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Gradient border effect (using pseudo-element for better control) */
+    .group:hover .border-gradient-to-r {
+      background: linear-gradient(to right, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+      border: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .grid {
+        gap: 6px; /* Reduce gap for mobile */
+      }
+      .group .flex-1 {
+        padding: 1rem; /* Reduce padding for mobile */
+      }
+      .group .text-lg {
+        font-size: 1rem; /* Smaller title on mobile */
+      }
+      .group .text-sm {
+        font-size: 0.875rem; /* Smaller text on mobile */
+      }
+    }
+
+    /* Dark mode adjustments */
+    .dark .bg-white\/90 {
+      background: rgba(31, 41, 55, 0.9); /* Slightly transparent gray in dark mode */
+    }
+  </style>
+{{ end }}
