@@ -947,7 +947,6 @@
     </script>
   </section>
 
-
   <!-- Projects Glimpse -->
   <section class="section relative">
     <div class="container py-12 px-4 sm:px-6">
@@ -968,7 +967,7 @@
               {{ with site.Data.projects }}
                 {{ range $index, $row := . }}
                   <div class="swiper-slide animate-project-card">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700 mx-1">
                       <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2 leading-tight">
                           {{ $row.Title | markdownify }}
@@ -1027,7 +1026,7 @@
       .projectSwiper {
         width: 100%;
         max-width: 100%;
-        padding: 0 40px; /* Space for arrows */
+        padding: 0 40px;
         margin: 0 auto;
         overflow: hidden;
         position: relative;
@@ -1042,8 +1041,8 @@
         width: 320px;
         height: auto;
         opacity: 0.85;
-        transition: opacity 0.3s ease, -webkit-transform 0.3s ease, transform 0.3s ease;
-        padding: 8px 0; /* Vertical padding for card alignment */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        padding: 8px 0;
       }
 
       .swiper-slide-active {
@@ -1052,7 +1051,6 @@
 
       .animate-project-card {
         opacity: 0;
-        -webkit-transform: translateY(20px);
         transform: translateY(20px);
         animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         animation-delay: calc(var(--index, 0) * 0.1s);
@@ -1061,7 +1059,6 @@
       @keyframes fadeInUp {
         to {
           opacity: 1;
-          -webkit-transform: translateY(0);
           transform: translateY(0);
         }
       }
@@ -1071,13 +1068,11 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         color: var(--accent-primary);
         top: 50%;
-        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         transition: all 0.3s ease;
         z-index: 10;
@@ -1099,7 +1094,6 @@
 
       .swiper-button-prev:hover,
       .swiper-button-next:hover {
-        -webkit-transform: translateY(-50%) scale(1.1);
         transform: translateY(-50%) scale(1.1);
         background: var(--accent-primary);
         color: #fff;
@@ -1144,8 +1138,8 @@
           padding: 0;
         }
         .swiper-slide {
-          width: 85vw;
-          max-width: 300px;
+          width: 100% !important;
+          max-width: 340px;
           margin: 0 auto;
         }
         .swiper-button-prev,
@@ -1161,7 +1155,6 @@
         .swiper-button-next {
           animation: none !important;
           transition: none !important;
-          -webkit-transform: none !important;
           transform: none !important;
           opacity: 1 !important;
         }
@@ -1172,7 +1165,7 @@
       document.addEventListener('DOMContentLoaded', () => {
         const projectSlider = new Swiper('.projectSwiper', {
           loop: true,
-          slidesPerView: 1, // Show only 1 slide by default (for mobile)
+          slidesPerView: 1, // Ensure single slide on mobile
           spaceBetween: 16,
           centeredSlides: true,
           grabCursor: true,
@@ -1185,19 +1178,25 @@
             prevEl: '.swiper-button-prev',
           },
           breakpoints: {
-            // On screens 640px and up
+            // Mobile screens (0-639px)
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 16,
+              centeredSlides: true
+            },
+            // Tablets (640px and up)
             640: {
               slidesPerView: 'auto',
               spaceBetween: 20,
-              centeredSlides: false,
+              centeredSlides: false
             },
-            // On screens 768px and up
+            // Desktop (768px and up)
             768: {
               slidesPerView: 'auto',
               spaceBetween: 24,
-              centeredSlides: false,
-            },
-          },
+              centeredSlides: false
+            }
+          }
         });
 
         const projectCards = document.querySelectorAll('.animate-project-card');
