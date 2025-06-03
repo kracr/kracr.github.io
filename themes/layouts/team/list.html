@@ -3,6 +3,9 @@
   <div class="template-wrapper">
     {{ partial "page-header" . }}
 
+    <!-- Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
     <style>
       /* Modern typography */
       body {
@@ -39,18 +42,21 @@
         position: fixed;
         right: 1.5rem;
         top: 50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
         z-index: 1000;
-        max-height: calc(100vh - 100px); /* Prevent nav from extending too far */
-        overflow-y: auto; /* Allow scrolling if nav is too tall */
+        max-height: calc(100vh - 100px - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
       .quick-nav.absolute {
         position: absolute;
         top: auto;
         bottom: 1.5rem;
+        -webkit-transform: none;
         transform: none;
       }
       .quick-nav a {
@@ -64,14 +70,17 @@
         font-weight: 500;
         border-radius: 9999px;
         text-decoration: none;
-        transition: transform 0.3s ease;
+        transition: -webkit-transform 0.3s ease, transform 0.3s ease;
         position: relative;
         white-space: nowrap;
         min-width: 100px;
         text-align: center;
         opacity: 0;
+        -webkit-transform: translateX(20px);
         transform: translateX(20px);
         animation: fadeInRight 0.6s ease-out forwards;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent; /* Remove iOS tap highlight */
       }
       .quick-nav a:nth-child(1) { animation-delay: 0.1s; }
       .quick-nav a:nth-child(2) { animation-delay: 0.2s; }
@@ -79,7 +88,9 @@
       .quick-nav a:nth-child(4) { animation-delay: 0.4s; }
       .quick-nav a:nth-child(5) { animation-delay: 0.5s; }
       .quick-nav a:nth-child(6) { animation-delay: 0.6s; }
-      .quick-nav a:hover {
+      .quick-nav a:hover,
+      .quick-nav a:focus {
+        -webkit-transform: scale(1.05);
         transform: scale(1.05);
       }
       .quick-nav a:focus {
@@ -93,6 +104,7 @@
         position: absolute;
         right: 110%;
         top: 50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         background: #1e293b;
         color: white;
@@ -108,7 +120,8 @@
       .dark .quick-nav a::after {
         background: #475569;
       }
-      .quick-nav a:hover::after {
+      .quick-nav a:hover::after,
+      .quick-nav a:focus::after {
         opacity: 1;
         visibility: visible;
       }
@@ -117,6 +130,7 @@
       @keyframes fadeInRight {
         to {
           opacity: 1;
+          -webkit-transform: translateX(0);
           transform: translateX(0);
         }
       }
@@ -138,22 +152,25 @@
         .quick-nav {
           position: fixed;
           top: auto;
-          bottom: 1.5rem; /* Base bottom spacing */
+          bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
           right: auto;
           left: 50%;
+          -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
           padding: 0.75rem;
           background: rgba(255, 255, 255, 0.95);
+          -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
           border-radius: 16px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           display: flex;
-          flex-direction: row; /* Horizontal layout */
+          flex-direction: row;
           gap: 0.5rem;
           overflow-x: auto;
-          overflow-y: hidden; /* Prevent vertical scrolling */
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
           overscroll-behavior-x: contain;
-          scroll-snap-type: x proximity; /* Smooth snapping for scrolling */
+          scroll-snap-type: x proximity; /* Reverted to proximity for smoother iOS scrolling */
           white-space: nowrap;
           max-width: 90%;
           min-height: 48px;
@@ -162,12 +179,14 @@
         }
         .dark .quick-nav {
           background: rgba(31, 41, 55, 0.95);
+          -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
         }
         .quick-nav.absolute {
           position: absolute;
           bottom: auto;
           top: auto;
+          -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
         }
         .quick-nav a {
@@ -175,13 +194,13 @@
           min-width: 80px;
           font-size: 0.85rem;
           border-radius: 12px;
-          touch-action: manipulation;
-          scroll-snap-align: center; /* Center items when scrolling */
+          scroll-snap-align: center;
         }
         .quick-nav a::after {
           right: auto;
           bottom: 120%;
           top: auto;
+          -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
           left: 50%;
           margin-bottom: 0.75rem;
@@ -213,10 +232,35 @@
         }
       }
 
+      /* Backdrop filter fallback */
+      @supports not (backdrop-filter: blur(1px)) {
+        .quick-nav {
+          background: rgba(255, 255, 255, 0.98);
+        }
+        .dark .quick-nav {
+          background: rgba(31, 41, 55, 0.98);
+        }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .quick-nav a {
+          animation: none !important;
+          -webkit-transform: none !important;
+          transform: none !important;
+          opacity: 1 !important;
+        }
+        .quick-nav a:hover,
+        .quick-nav a:focus {
+          -webkit-transform: none !important;
+          transform: none !important;
+        }
+      }
+
       /* Gradient line for headers */
       .header-divider {
         height: 4px;
-        background: linear-gradient(to right,#B0743F, #E77F25, #FF5C57);
+        background: linear-gradient(to right, #B0743F, #E77F25, #FF5C57);
         border-radius: 2px;
         margin: 0 auto 2rem;
         width: 100%;
@@ -230,12 +274,13 @@
         <nav class="quick-nav" role="navigation" aria-label="Team category quick navigation">
           {{ $order := slice "Faculty" "PhD" "MTech" "BTech" "Collaborator" "Alumni" }}
           {{ range $pos := $order }}
-            {{ $group := where site.Data.teams "Position" $pos }}
+            {{ $group := where (site.Data.teams | default slice) "Position" $pos }}
             {{ if gt (len $group) 0 }}
               <a href="#{{ $pos | lower }}"
                  data-target="{{ $pos | lower }}"
                  data-tooltip="{{ $pos }}"
-                 aria-label="Scroll to {{ $pos }} team members">
+                 aria-label="Scroll to {{ $pos }} team members"
+                 aria-current="{{ if eq (lower $.Params.section) (lower $pos) }}true{{ else }}false{{ end }}">
                 {{ $pos }}
               </a>
             {{ end }}
@@ -244,15 +289,15 @@
 
         <!-- Team Sections -->
         {{ $order := slice "Faculty" "PhD" "MTech" "BTech" "Collaborator" "Alumni" }}
-        {{ $teams := site.Data.teams }}
+        {{ $teams := site.Data.teams | default slice }}
 
         {{ range $pos := $order }}
           {{ $group := where $teams "Position" $pos }}
           {{ if gt (len $group) 0 }}
             <section class="team-section" id="{{ $pos | lower }}" aria-labelledby="{{ $pos | lower }}-heading">
               <!-- Position Heading -->
-              <h2 id="{{ $pos | lower }}-heading" class="mb-4 text-4xl font-bold text-gray-900 dark:text-white text-center">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B0743F] via-[#E77F25] to-[#FF5C57]">
+              <h2 id="{{ $pos | lower }}-heading" class="mb-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center">
+                <span class="bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text; background-image: linear-gradient(to right, #B0743F, #E77F25, #FF5C57);">
                   {{ $pos }}
                 </span>
               </h2>
@@ -272,112 +317,138 @@
         {{ end }}
       </div>
     </section>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const navLinks = document.querySelectorAll('.quick-nav a');
-      const quickNav = document.querySelector('.quick-nav');
-      const templateWrapper = document.querySelector('.template-wrapper');
-      const footer = document.querySelector('.page-footer') || document.querySelector('footer');
-      const alumniSection = document.querySelector('#alumni');
-      let footerHeight = footer ? footer.offsetHeight : 0;
-      let alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : 0;
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.quick-nav a');
+        const quickNav = document.querySelector('.quick-nav');
+        const templateWrapper = document.querySelector('.template-wrapper');
+        const footer = document.querySelector('.page-footer') || document.querySelector('footer');
+        const alumniSection = document.querySelector('#alumni');
+        let footerHeight = footer ? footer.offsetHeight : 0;
 
-      // Smooth scroll to section heading
-      navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('data-target');
-          const targetHeading = document.getElementById(`${targetId}-heading`);
-
-          if (targetHeading) {
-            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
-            const scrollOffset = header.offsetHeight + 20;
-            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
-
+        // Smooth scroll function
+        const smoothScroll = (targetPosition) => {
+          try {
             window.scrollTo({
               top: targetPosition,
               behavior: 'smooth'
             });
-
-            history.pushState(null, null, `#${targetId}`);
+          } catch (e) {
+            // Fallback for older browsers
+            window.scrollTo(0, targetPosition);
           }
+        };
+
+        // Handle click events
+        navLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetHeading = document.getElementById(`${targetId}-heading`);
+
+            if (targetHeading) {
+              const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+              const scrollOffset = header.offsetHeight + 20;
+              const targetPosition = targetHeading.getBoundingClientRect().top + window.scrollY - scrollOffset;
+
+              smoothScroll(targetPosition);
+
+              // Update URL hash
+              try {
+                history.replaceState(null, null, `#${targetId}`);
+              } catch (err) {
+                console.warn('Hash update failed:', err);
+              }
+
+              // Update ARIA current
+              navLinks.forEach(l => l.setAttribute('aria-current', 'false'));
+              this.setAttribute('aria-current', 'true');
+            }
+          });
+        });
+
+        // Handle initial hash in URL
+        if (window.location.hash) {
+          const targetId = window.location.hash.substring(1);
+          const targetHeading = document.getElementById(`${targetId}-heading`);
+          if (targetHeading) {
+            setTimeout(() => {
+              const header = document.querySelector('.page-header') || { offsetHeight: 0 };
+              const scrollOffset = header.offsetHeight + 20;
+              const targetPosition = targetHeading.getBoundingClientRect().top + window.scrollY - scrollOffset;
+              window.scrollTo({ top: targetPosition, behavior: 'auto' });
+            }, 100);
+          }
+        }
+
+        // Adjust quick-nav position
+        function adjustQuickNavPosition() {
+          if (!quickNav || !templateWrapper) return;
+
+          const wrapperRect = templateWrapper.getBoundingClientRect();
+          const navRect = quickNav.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+          const buffer = 20;
+          footerHeight = footer ? footer.offsetHeight : 0;
+          const alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.scrollY : wrapperRect.bottom + window.scrollY;
+          const footerTop = footer ? footer.getBoundingClientRect().top + window.scrollY : Infinity;
+          const stopPoint = Math.min(footerTop, alumniBottom) - navRect.height - buffer;
+
+          if (window.innerWidth <= 768) {
+            if (window.scrollY + viewportHeight > stopPoint + navRect.height + buffer) {
+              quickNav.classList.add('absolute');
+              quickNav.style.top = `${stopPoint - wrapperRect.top}px`;
+              quickNav.style.bottom = 'auto';
+            } else {
+              quickNav.classList.remove('absolute');
+              quickNav.style.top = 'auto';
+              quickNav.style.bottom = `calc(1.5rem + env(safe-area-inset-bottom, 0))`;
+            }
+          } else {
+            if (footer && window.scrollY + viewportHeight > footerTop + buffer) {
+              quickNav.classList.add('absolute');
+              quickNav.style.bottom = `${wrapperRect.bottom + window.scrollY - stopPoint + buffer}px`;
+              quickNav.style.top = 'auto';
+            } else {
+              quickNav.classList.remove('absolute');
+              quickNav.style.bottom = 'auto';
+              quickNav.style.top = '50%';
+            }
+          }
+        }
+
+        // Throttled scroll handler
+        let lastScroll = 0;
+        function handleScroll() {
+          const now = Date.now();
+          if (now - lastScroll > 50) {
+            lastScroll = now;
+            adjustQuickNavPosition();
+          } else {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(handleScroll);
+          }
+        }
+
+        // Debounced resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            footerHeight = footer ? footer.offsetHeight : 0;
+            adjustQuickNavPosition();
+          }, 100);
+        });
+
+        window.addEventListener('scroll', handleScroll);
+        adjustQuickNavPosition();
+
+        // Cleanup
+        window.addEventListener('unload', () => {
+          window.removeEventListener('scroll', handleScroll);
         });
       });
-
-      // Handle initial hash in URL
-      if (window.location.hash) {
-        const targetId = window.location.hash.substring(1);
-        const targetHeading = document.getElementById(`${targetId}-heading`);
-        if (targetHeading) {
-          setTimeout(() => {
-            const header = document.querySelector('.page-header') || { offsetHeight: 0 };
-            const scrollOffset = header.offsetHeight + 20;
-            const targetPosition = targetHeading.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'auto'
-            });
-          }, 50);
-        }
-      }
-
-      // Adjust quick-nav position to avoid overlapping footer or stick after Alumni section
-      function adjustQuickNavPosition() {
-        if (!quickNav || !templateWrapper) return;
-
-        const wrapperRect = templateWrapper.getBoundingClientRect();
-        const navRect = quickNav.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        const buffer = 20; /* Space above footer or Alumni section */
-        let stopPoint;
-
-        /* Update footer height and Alumni section bottom */
-        footerHeight = footer ? footer.offsetHeight : 0;
-        alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : wrapperRect.bottom + window.pageYOffset;
-
-        /* Use the higher of the footer top or Alumni section bottom */
-        const footerTop = footer ? footer.getBoundingClientRect().top + window.pageYOffset : Infinity;
-        stopPoint = Math.min(footerTop, alumniBottom) - navRect.height - buffer;
-
-        if (window.innerWidth <= 768) {
-          /* Mobile view */
-          if (window.pageYOffset + viewportHeight > stopPoint + navRect.height + buffer) {
-            quickNav.classList.add('absolute');
-            quickNav.style.top = `${stopPoint - wrapperRect.top}px`;
-            quickNav.style.bottom = 'auto';
-          } else {
-            quickNav.classList.remove('absolute');
-            quickNav.style.top = 'auto';
-            quickNav.style.bottom = '1.5rem';
-          }
-        } else {
-          /* Desktop view */
-          if (footer && window.pageYOffset + viewportHeight > footerTop + buffer) {
-            quickNav.classList.add('absolute');
-            quickNav.style.bottom = `${wrapperRect.bottom + window.pageYOffset - stopPoint + buffer}px`;
-            quickNav.style.top = 'auto';
-          } else {
-            quickNav.classList.remove('absolute');
-            quickNav.style.bottom = 'auto';
-            quickNav.style.top = '50%';
-          }
-        }
-      }
-
-      /* Update footer height and Alumni bottom on resize */
-      window.addEventListener('resize', () => {
-        footerHeight = footer ? footer.offsetHeight : 0;
-        alumniBottom = alumniSection ? alumniSection.getBoundingClientRect().bottom + window.pageYOffset : 0;
-        adjustQuickNavPosition();
-      });
-
-      /* Update position on scroll */
-      window.addEventListener('scroll', adjustQuickNavPosition);
-
-      /* Initial adjustment */
-      adjustQuickNavPosition();
-    });
-  </script>
+    </script>
+  </div>
 {{ end }}
