@@ -947,7 +947,7 @@
     </script>
   </section>
 
-  <!-- Projects Glimpse (Scrollable Carousel with Uniform Heights) -->
+
   <!-- Projects Glimpse -->
   <section class="section relative">
     <div class="container py-12 px-4 sm:px-6">
@@ -1029,7 +1029,7 @@
         max-width: 100%;
         padding: 0 40px; /* Space for arrows */
         margin: 0 auto;
-        overflow: hidden; /* Prevent overflow */
+        overflow: hidden;
         position: relative;
       }
 
@@ -1139,13 +1139,14 @@
         }
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 639px) {
         .projectSwiper {
           padding: 0;
         }
         .swiper-slide {
-          width: 90vw;
+          width: 85vw;
           max-width: 300px;
+          margin: 0 auto;
         }
         .swiper-button-prev,
         .swiper-button-next {
@@ -1171,7 +1172,7 @@
       document.addEventListener('DOMContentLoaded', () => {
         const projectSlider = new Swiper('.projectSwiper', {
           loop: true,
-          slidesPerView: 'auto',
+          slidesPerView: 1, // Show only 1 slide by default (for mobile)
           spaceBetween: 16,
           centeredSlides: true,
           grabCursor: true,
@@ -1184,17 +1185,14 @@
             prevEl: '.swiper-button-prev',
           },
           breakpoints: {
-            360: {
-              slidesPerView: 1,
-              spaceBetween: 12,
-              centeredSlides: true,
-            },
-            768: {
+            // On screens 640px and up
+            640: {
               slidesPerView: 'auto',
               spaceBetween: 20,
               centeredSlides: false,
             },
-            1024: {
+            // On screens 768px and up
+            768: {
               slidesPerView: 'auto',
               spaceBetween: 24,
               centeredSlides: false,
