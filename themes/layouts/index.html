@@ -1,25 +1,22 @@
 {{ define "main" }}
   <section class="section pt-14 relative overflow-hidden">
     <!-- Particle Canvas -->
-    <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none" aria-label="Decorative particle animation"></canvas>
-
-    <!-- Google Fonts Import -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
 
     <div class="kracr-hero w-full py-12">
       <div class="max-w-4xl mx-auto px-6 flex flex-col">
         <!-- Subtitle - Top Line -->
-        <p class="hero-subtitle mb-6 sm:mb-8 sm:self-start sm:ml-[30%]">
+        <p class="hero-subtitle mb-6 sm:mb-8 sm:self-start sm:left[30%] sm:relative">
           KNOWLEDGEABLE COMPUTING &<br> REASONING LAB
         </p>
 
-        <!-- Title - Middle Line -->
+        <!-- Title - Middle Line with Typewriter Effect -->
         <h1 class="hero-title my-6 sm:my-8 self-center">
           Welcome to KRaCR
         </h1>
 
         <!-- Tagline - Bottom Line -->
-        <p class="hero-tagline mt-6 sm:mt-8 sm:self-end sm:mr-[30%]">
+        <p class="hero-tagline mt-6 sm:mt-8 sm:self-end sm:right[30%] sm:relative">
           CRACKER OF A LAB
         </p>
       </div>
@@ -29,7 +26,6 @@
       /* Base Styles */
       .kracr-hero {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        padding-top: env(safe-area-inset-top, 0); /* Support iOS notches */
       }
 
       .hero-subtitle,
@@ -44,11 +40,12 @@
       }
 
       .hero-subtitle {
-        -webkit-transform: translateX(-30px) scale(0.98);
         transform: translateX(-30px) scale(0.98);
-        animation: slideFadeInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s;
+        animation: slideFadeInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 0.3s;
       }
 
+      /* Typewriter Title Styles */
       .hero-title {
         text-align: center !important;
         font-size: clamp(2.5rem, 8vw, 6rem);
@@ -59,34 +56,28 @@
         background-clip: text;
         background-image: linear-gradient(to bottom, #F8E9D5, #D9A875, #B0743F, #7B3E23, #3B1D0F);
         margin: 0;
-        opacity: 0;
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9);
         display: inline-block;
         overflow: hidden;
         white-space: nowrap;
-        border-right: 4px solid transparent;
-        animation: scaleInBounce 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s,
-          typing 1.5s steps(15, end) forwards 0.6s,
-          blink 0.75s step-end infinite 0.6s;
+        opacity: 0;
+        transform: scale(0.9);
+        width: 0;
       }
 
       .hero-tagline {
-        -webkit-transform: translateX(30px) scale(0.98);
         transform: translateX(30px) scale(0.98);
-        animation: slideFadeInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.9s;
+        animation: slideFadeInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 1.8s;
       }
 
       /* Animations */
       @keyframes slideFadeInLeft {
         0% {
           opacity: 0;
-          -webkit-transform: translateX(-30px) scale(0.98);
           transform: translateX(-30px) scale(0.98);
         }
         100% {
           opacity: 1;
-          -webkit-transform: translateX(0) scale(1);
           transform: translateX(0) scale(1);
         }
       }
@@ -94,42 +85,46 @@
       @keyframes slideFadeInRight {
         0% {
           opacity: 0;
-          -webkit-transform: translateX(30px) scale(0.98);
           transform: translateX(30px) scale(0.98);
         }
         100% {
           opacity: 1;
-          -webkit-transform: translateX(0) scale(1);
           transform: translateX(0) scale(1);
+        }
+      }
+
+      @keyframes typing {
+        0% {
+          width: 0;
+          opacity: 0;
+        }
+        1% {
+          opacity: 1;
+        }
+        100% {
+          width: 100%;
+          opacity: 1;
         }
       }
 
       @keyframes scaleInBounce {
         0% {
-          opacity: 0;
-          -webkit-transform: scale(0.9);
           transform: scale(0.9);
         }
         50% {
-          opacity: 1;
-          -webkit-transform: scale(1.02);
           transform: scale(1.02);
         }
         100% {
-          opacity: 1;
-          -webkit-transform: scale(1);
           transform: scale(1);
         }
       }
 
-      @keyframes typing {
-        from { width: 0; }
-        to { width: 100%; }
-      }
-
-      @keyframes blink {
-        0%, 100% { border-right-color: transparent; }
-        50% { border-right-color: #B0743F; }
+      /* Animation Timeline */
+      .hero-title {
+        animation:
+          typing 1.5s steps(15, end) forwards,
+          scaleInBounce 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 0.6s, 0.6s;
       }
 
       /* Responsive Adjustments */
@@ -137,20 +132,17 @@
         .hero-title {
           white-space: normal;
           overflow: visible;
-          border-right: none !important;
-          animation: scaleInBounce 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+          animation:
+            scaleInBounce 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+            fadeIn 0.1s linear forwards !important;
+          animation-delay: 0.6s, 0.6s !important;
+          width: 100% !important;
         }
-
-        .kracr-hero > div {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-
         .hero-subtitle,
         .hero-tagline {
           align-self: center !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
+          left: auto !important;
+          right: auto !important;
           font-size: 0.95rem;
         }
       }
@@ -161,17 +153,15 @@
         color: #D9A875;
       }
 
-      /* Respect Reduced Motion */
+      /* Respect reduced motion */
       @media (prefers-reduced-motion: reduce) {
         .hero-subtitle,
         .hero-title,
         .hero-tagline {
           animation: none !important;
           opacity: 1 !important;
-          -webkit-transform: none !important;
           transform: none !important;
           width: 100% !important;
-          border-right: none !important;
         }
       }
     </style>
@@ -182,24 +172,30 @@
         const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: null, y: null, radius: 120 };
-        let animationFrameId;
+        let animationId = null;
+        let isDarkMode = document.documentElement.classList.contains('dark');
 
         // Set canvas size
         function resizeCanvas() {
           const section = canvas.closest('section');
           canvas.width = section.offsetWidth;
           canvas.height = section.offsetHeight;
+
+          // For high DPI displays
+          const dpr = window.devicePixelRatio || 1;
+          canvas.width = section.offsetWidth * dpr;
+          canvas.height = section.offsetHeight * dpr;
+          ctx.scale(dpr, dpr);
         }
 
-        // Initialize particles
+        // Initialize particles with dynamic count based on screen size
         function initParticles() {
-          const isMobile = window.innerWidth < 640;
-          const particleCount = isMobile ? 20 : 40; // Reduced for performance
+          const particleCount = window.innerWidth < 640 ? 30 : 60;
           particles = [];
-          const particleColor = '217, 168, 117';
+          const particleColor = isDarkMode ? '248, 233, 213' : '217, 168, 117'; // #F8E9D5 or #D9A875 in RGB
 
           for (let i = 0; i < particleCount; i++) {
-            const size = Math.random() * 10 + 4;
+            const size = Math.random() * 12 + 5;
             const type = Math.floor(Math.random() * 2);
 
             particles.push({
@@ -207,18 +203,18 @@
               y: Math.random() * canvas.height,
               size: size,
               baseSize: size,
-              speedX: (Math.random() * 1 - 0.5) * 1.2,
-              speedY: (Math.random() * 1 - 0.5) * 1.2,
+              speedX: (Math.random() * 1 - 0.5) * 1.5,
+              speedY: (Math.random() * 1 - 0.5) * 1.5,
               color: `rgba(${particleColor}, ${Math.random() * 0.3 + 0.2})`,
               type: type,
               rotation: Math.random() * 360,
-              rotationSpeed: (Math.random() * 1 - 0.5) * 0.4,
-              density: Math.random() * 6 + 2
+              rotationSpeed: (Math.random() * 1 - 0.5) * 0.5,
+              density: Math.random() * 8 + 3
             });
           }
         }
 
-        // Draw shapes
+        // Draw shapes (circles and triangles)
         function drawShape(particle) {
           ctx.save();
           ctx.translate(particle.x, particle.y);
@@ -240,10 +236,9 @@
           ctx.restore();
         }
 
-        // Connect particles
+        // Connect particles near each other
         function connectParticles() {
-          const isDarkMode = document.documentElement.classList.contains('dark');
-          const lineColor = isDarkMode ? '248, 233, 213' : '176, 116, 63';
+          const lineColor = isDarkMode ? '248, 233, 213' : '176, 116, 63'; // #F8E9D5 or #B0743F
 
           for (let a = 0; a < particles.length; a++) {
             for (let b = a; b < particles.length; b++) {
@@ -251,10 +246,10 @@
               const dy = particles[a].y - particles[b].y;
               const distance = Math.sqrt(dx * dx + dy * dy);
 
-              if (distance < 100) {
-                const opacity = 1 - distance / 100;
-                ctx.strokeStyle = `rgba(${lineColor}, ${opacity * 0.2})`;
-                ctx.lineWidth = 1;
+              if (distance < 120) {
+                const opacity = 1 - distance / 120;
+                ctx.strokeStyle = `rgba(${lineColor}, ${opacity * 0.3})`;
+                ctx.lineWidth = 1.5;
                 ctx.beginPath();
                 ctx.moveTo(particles[a].x, particles[a].y);
                 ctx.lineTo(particles[b].x, particles[b].y);
@@ -264,34 +259,38 @@
           }
         }
 
-        // Handle mouse and touch interaction
-        function handleInteraction(clientX, clientY) {
-          const rect = canvas.getBoundingClientRect();
-          mouse.x = clientX - rect.left;
-          mouse.y = clientY - rect.top;
-
+        // Handle mouse interaction
+        function handleMouseInteraction() {
           for (let i = 0; i < particles.length; i++) {
             const p = particles[i];
+
+            // Calculate distance from mouse
             const dx = mouse.x - p.x;
             const dy = mouse.y - p.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < mouse.radius && mouse.x !== null && mouse.y !== null) {
+              // Push particles away from mouse
               const forceDirectionX = dx / distance;
               const forceDirectionY = dy / distance;
               const force = (mouse.radius - distance) / mouse.radius;
 
-              p.x -= forceDirectionX * force * p.density * 0.2;
-              p.y -= forceDirectionY * force * p.density * 0.2;
-              p.size = p.baseSize + (8 * force);
-              p.rotationSpeed = force * 2;
+              p.x -= forceDirectionX * force * p.density * 0.3;
+              p.y -= forceDirectionY * force * p.density * 0.3;
+
+              // Make particles grow when near mouse
+              p.size = p.baseSize + (10 * force);
+
+              // Increase rotation speed when near mouse
+              p.rotationSpeed = force * 3;
             } else {
               if (p.size > p.baseSize) {
-                p.size -= 0.1;
+                p.size -= 0.2;
               }
-              p.rotationSpeed = (Math.random() * 1 - 0.5) * 0.4;
+              p.rotationSpeed = (Math.random() * 1 - 0.5) * 0.5;
             }
 
+            // Update rotation
             p.rotation += p.rotationSpeed;
           }
         }
@@ -302,72 +301,71 @@
 
           for (let i = 0; i < particles.length; i++) {
             let p = particles[i];
-            p.x += p.speedX * 0.6;
-            p.y += p.speedY * 0.6;
 
+            // Update position
+            p.x += p.speedX * 0.8;
+            p.y += p.speedY * 0.8;
+
+            // Wrap around edges
             if (p.x < -p.size) p.x = canvas.width + p.size;
             if (p.x > canvas.width + p.size) p.x = -p.size;
             if (p.y < -p.size) p.y = canvas.height + p.size;
             if (p.y > canvas.height + p.size) p.y = -p.size;
 
+            // Draw particle
             drawShape(p);
           }
 
+          handleMouseInteraction();
           connectParticles();
-          animationFrameId = requestAnimationFrame(animate);
+
+          animationId = requestAnimationFrame(animate);
         }
 
-        // Event listeners
+        // Mouse event handlers
         window.addEventListener('mousemove', function(e) {
-          handleInteraction(e.clientX, e.clientY);
+          const rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
         });
-
-        window.addEventListener('touchmove', function(e) {
-          e.preventDefault(); // Prevent scrolling on touch
-          const touch = e.touches[0];
-          handleInteraction(touch.clientX, touch.clientY);
-        }, { passive: false });
 
         window.addEventListener('mouseout', function() {
           mouse.x = null;
           mouse.y = null;
         });
 
-        window.addEventListener('touchend', function() {
-          mouse.x = null;
-          mouse.y = null;
-        });
-
-        // Debounced resize
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(function() {
-            resizeCanvas();
-            initParticles();
-          }, 100);
-        });
-
-        // Dark mode observer
+        // Handle dark mode changes
         const observer = new MutationObserver(function(mutations) {
           mutations.forEach(function(mutation) {
             if (mutation.attributeName === 'class') {
+              isDarkMode = document.documentElement.classList.contains('dark');
               initParticles();
             }
           });
         });
 
-        observer.observe(document.documentElement, { attributes: true });
+        observer.observe(document.documentElement, {
+          attributes: true
+        });
 
         // Initialize
         resizeCanvas();
         initParticles();
         animate();
 
-        // Cleanup on unload
-        window.addEventListener('unload', function() {
-          cancelAnimationFrame(animationFrameId);
+        // Handle window resize
+        window.addEventListener('resize', function() {
+          resizeCanvas();
+          initParticles();
         });
+
+        // Cleanup
+        return function() {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+          observer.disconnect();
+        };
       });
     </script>
   </section>
