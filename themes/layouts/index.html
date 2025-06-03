@@ -961,18 +961,18 @@
         </div>
       </div>
       <div class="row justify-center">
-        <div class="col-12 px-0 sm:px-4">
-          <div class="swiper projects-carousel swiper-container w-full">
-            <div class="swiper-wrapper pb-12">
+        <div class="col-12">
+          <div class="swiper multiple-slide-carousel swiper-container relative w-full">
+            <div class="swiper-wrapper">
               {{ with site.Data.projects }}
                 {{ range $index, $row := . }}
-                  <div class="swiper-slide px-2 sm:px-3">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700 min-h-[420px]">
+                  <div class="swiper-slide">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700 hover:-translate-y-2">
                       <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2 leading-tight">
                           {{ $row.Title | markdownify }}
                         </h3>
-                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
+                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 line-clamp-4 flex-grow">
                           {{ $row.Description | markdownify }}
                         </p>
                         <p class="text-sm text-[#e77f25] dark:text-[#FF5C57] mb-4 line-clamp-1">
@@ -990,23 +990,10 @@
                 {{ end }}
               {{ end }}
             </div>
-            <!-- Navigation Buttons -->
-            <div class="flex justify-center items-center mt-8 space-x-4">
-              <button class="project-prev group p-3 flex justify-center items-center border border-solid border-[#B0743F] w-12 h-12 transition-all duration-300 rounded-full hover:bg-[#B0743F]">
-                <svg class="h-5 w-5 text-[#B0743F] group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <button class="project-next group p-3 flex justify-center items-center border border-solid border-[#B0743F] w-12 h-12 transition-all duration-300 rounded-full hover:bg-[#B0743F]">
-                <svg class="h-5 w-5 text-[#B0743F] group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-8">
+      <div class="text-center mt-10">
         <a href="{{ "projects/" | relURL }}" class="inline-flex items-center px-6 py-3 bg-[#B0743F] hover:bg-[#E77F25] text-white text-base font-semibold rounded-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
           <span>See All Projects</span>
           <i class="fa fa-arrow-right ml-2 transition-transform group-hover:translate-x-2"></i>
@@ -1015,86 +1002,138 @@
     </div>
 
     <style>
-      .projects-carousel {
+      .swiper-wrapper {
         width: 100%;
-        overflow: hidden;
+        height: max-content !important;
+        -webkit-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+        position: relative;
+        display: flex;
+        align-items: stretch;
       }
 
-      .projects-carousel .swiper-slide {
+      .swiper-slide {
+        width: 320px;
         height: auto;
-        width: 100%;
+        transition: transform 0.3s ease;
         opacity: 0.9;
-        transition: opacity 0.3s ease;
       }
 
-      .projects-carousel .swiper-slide-active,
-      .projects-carousel .swiper-slide-duplicate-active {
+      .swiper-slide:hover {
+        transform: translateY(-8px);
         opacity: 1;
       }
 
-      /* Mobile-first padding */
-      .projects-carousel .swiper-wrapper {
-        padding: 0 8px 24px;
+      .swiper-slide .flex-col {
+        height: 100%;
       }
 
-      /* Navigation button styling */
-      .project-prev,
-      .project-next {
-        position: static;
-        margin-top: 0;
-        transform: none !important;
+      .multiple-slide-carousel {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0 20px;
       }
 
-      /* Responsive adjustments */
-      @media (min-width: 640px) {
-        .projects-carousel .swiper-wrapper {
-          padding: 0 12px 24px;
+      @media (max-width: 1536px) {
+        .swiper-slide {
+          width: 300px;
         }
       }
 
-      @media (min-width: 768px) {
-        .projects-carousel .swiper-wrapper {
-          padding: 0 16px 24px;
+      @media (max-width: 1280px) {
+        .swiper-slide {
+          width: 280px;
         }
       }
 
-      @media (max-width: 639px) {
-        .projects-carousel .swiper-slide {
-          width: 85% !important;
-          margin-right: 16px;
+      @media (max-width: 1024px) {
+        .swiper-slide {
+          width: 260px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .swiper-slide {
+          width: 240px;
+        }
+
+        .multiple-slide-carousel {
+          padding: 0 15px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .swiper-slide {
+          width: 85%;
+          max-width: 340px;
+          margin: 0 auto;
+        }
+
+        .multiple-slide-carousel {
+          padding: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .swiper-slide {
+          width: 90%;
         }
       }
     </style>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const projectsSwiper = new Swiper(".projects-carousel", {
+        var swiper = new Swiper(".multiple-slide-carousel", {
           loop: true,
-          slidesPerView: 1.2,
-          spaceBetween: 16,
-          centeredSlides: true,
-          navigation: {
-            nextEl: ".project-next",
-            prevEl: ".project-prev",
+          slidesPerView: 'auto',
+          spaceBetween: 20,
+          centeredSlides: false,
+          speed: 5000, // Increased speed from 8000 to 5000
+          autoplay: {
+            delay: 1,
+            disableOnInteraction: false,
+            waitForTransition: false,
+          },
+          freeMode: {
+            enabled: true,
+            momentum: false,
           },
           breakpoints: {
-            640: {
-              slidesPerView: 1.5,
-              spaceBetween: 20,
-              centeredSlides: false
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 24
-            },
-            1024: {
-              slidesPerView: 3,
+            1536: {
+              slidesPerView: 4,
               spaceBetween: 30
             },
             1280: {
               slidesPerView: 3,
-              spaceBetween: 32
+              spaceBetween: 30
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 25
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+              centeredSlides: false
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+              centeredSlides: true,
+              autoplay: false
             }
+          }
+        });
+
+        // Pause autoplay on hover
+        const carousel = document.querySelector('.multiple-slide-carousel');
+        carousel.addEventListener('mouseenter', () => {
+          swiper.autoplay.stop();
+        });
+        carousel.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 640) { // Only resume on larger screens
+            swiper.autoplay.start();
           }
         });
       });
